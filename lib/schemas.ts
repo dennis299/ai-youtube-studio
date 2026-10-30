@@ -163,7 +163,7 @@ export const SettingsSchema = z.object({
   aiMode: z.enum(["agent", "openai", "anthropic"]).default("agent"),
   openaiKey: z.string().optional(),
   anthropicKey: z.string().optional(),
-  openaiModel: z.string().default("gpt-5"),
+  openaiModel: z.string().default("gpt-5.5"),
   anthropicModel: z.string().default("claude-sonnet-5-5"),
   google: z
     .object({

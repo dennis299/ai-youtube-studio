@@ -1,9 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
+  // Every page reads live JSON state from disk, so render on each request.
+  // cacheComponents/partial prefetching add nothing for a single-user localhost app.
   turbopack: {
     rules: {
       "*.css": {

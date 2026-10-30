@@ -1,69 +1,83 @@
-import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Sparkles } from "lucide-react";
+import { LinkButton } from "@/components/link-button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { SetupNotice } from "@/components/setup-notice";
+import { listChannels, listVideos } from "@/lib/store";
+import { listJobs } from "@/lib/jobs";
+import { loadSettings } from "@/lib/settings";
 
-export default function Home() {
+export const dynamic = "force-dynamic";
+
+export default async function Dashboard() {
+  const [channels, jobs, settings] = await Promise.all([listChannels(), listJobs(), loadSettings()]);
+  const pending = jobs.filter((j) => j.status === "pending" || j.status === "in_progress").length;
+  const counts = await Promise.all(channels.map(async (c) => {
+    const videos = await listVideos(c.slug);
+    return {
+      c,
+      planned: videos.length,
+      approved: videos.filter((v) => ["approved", "producing", "rendered", "published"].includes(v.status)).length,
+      published: videos.filter((v) => v.status === "published").length,
+    };
+  }));
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="mx-auto max-w-5xl space-y-8">
+      <header className="space-y-2">
+        <h1 className="text-3xl font-semibold tracking-tight">Your channels</h1>
+        <p className="text-muted-foreground">
+          Niche → research → channel kit → monthly plan → storyboards → weekly check-in → produce → publish → learn.
+        </p>
+      </header>
+
+      <SetupNotice settings={settings} />
+
+      {pending > 0 && (
+        <Card className="border-primary/40">
+          <CardContent className="flex items-center justify-between gap-4 py-4">
+            <p className="text-sm">
+              <Sparkles className="mr-2 inline size-4 text-primary" />
+              {pending} job{pending === 1 ? "" : "s"} waiting for your AI agent.
+            </p>
+            <LinkButton href="/jobs" size="sm" variant="secondary">Open job inbox</LinkButton>
+          </CardContent>
+        </Card>
+      )}
+
+      {channels.length === 0 ? (
+        <Card>
+          <CardHeader>
+            <CardTitle>No channels yet</CardTitle>
+            <CardDescription>Pick a niche and let the AI research what is already working on YouTube.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <LinkButton href="/channels/new">Find a niche <ArrowRight className="size-4" /></LinkButton>
+          </CardContent>
+        </Card>
+      ) : (
+        <div className="grid gap-4 sm:grid-cols-2">
+          {counts.map(({ c, planned, approved, published }) => (
+            <Link key={c.slug} href={`/channels/${c.slug}`}>
+              <Card className="h-full transition-colors hover:border-primary/50">
+                <CardHeader>
+                  <div className="flex items-center justify-between gap-2">
+                    <CardTitle>{c.name}</CardTitle>
+                    <Badge variant="secondary">{c.stage}</Badge>
+                  </div>
+                  <CardDescription className="line-clamp-2">{c.niche}</CardDescription>
+                </CardHeader>
+                <CardContent className="flex gap-6 text-sm text-muted-foreground">
+                  <span><strong className="text-foreground">{planned}</strong> planned</span>
+                  <span><strong className="text-foreground">{approved}</strong> approved</span>
+                  <span><strong className="text-foreground">{published}</strong> published</span>
+                </CardContent>
+              </Card>
+            </Link>
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      )}
     </div>
   );
 }
