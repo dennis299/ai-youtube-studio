@@ -1,0 +1,310 @@
+{
+  "videoId": "2026-11-w1-3",
+  "titleOptions": [
+    "Netflix Destroyed Its Own Business on Purpose",
+    "The Worst Year in Netflix History Saved It",
+    "Netflix Lost 800,000 Customers and Kept Going"
+  ],
+  "chosenTitle": "Netflix Destroyed Its Own Business on Purpose",
+  "hook": "In 2011, Netflix made its customers so angry that it lost around 800,000 subscribers in three months and roughly three quarters of its stock value. Analysts called it one of the worst blunders in business. It was also the move that made Netflix what it is today.",
+  "beats": [
+    {
+      "heading": "Cold open: the backlash",
+      "narration": "Angry customers, a crashing stock, and a CEO apologising on the internet."
+    },
+    {
+      "heading": "The DVD machine",
+      "narration": "Red envelopes, no late fees, and a business that beat Blockbuster."
+    },
+    {
+      "heading": "The bet",
+      "narration": "Reed Hastings decides DVDs are a dying business, even though they pay the bills."
+    },
+    {
+      "heading": "Qwikster",
+      "narration": "A price hike and a plan to split the company in two blow up spectacularly."
+    },
+    {
+      "heading": "The pivot",
+      "narration": "Netflix reverses Qwikster but keeps the bet, and starts making its own shows."
+    },
+    {
+      "heading": "The lesson",
+      "narration": "Netflix got the execution badly wrong and the direction exactly right."
+    }
+  ],
+  "scenes": [
+    {
+      "n": 1,
+      "narration": "In 2011, Netflix made its customers so angry that it lost around 800,000 subscribers in three months.",
+      "visual": "Stock footage of a person angrily closing a laptop; social-media style comment bubbles flooding the screen (generic, no real logos).",
+      "source": "stock",
+      "seconds": 8.5
+    },
+    {
+      "n": 2,
+      "narration": "Its stock fell roughly seventy-five percent in a few months.",
+      "visual": "Animated red stock line plunging from mid-2011 to late 2011.",
+      "source": "motion-graphics",
+      "seconds": 5.5
+    },
+    {
+      "n": 3,
+      "narration": "Analysts called it one of the worst blunders in modern business. The CEO had to publicly apologise.",
+      "visual": "Kinetic headline-style text: WORST BLUNDER? over newspaper texture.",
+      "source": "motion-graphics",
+      "seconds": 8.5
+    },
+    {
+      "n": 4,
+      "narration": "And yet, the decision behind that disaster is the reason Netflix exists today. This is the story of a company that attacked its own business on purpose.",
+      "visual": "Title card: BUILT & BROKEN, NETFLIX, red envelope cracking open into a streaming screen glow.",
+      "source": "motion-graphics",
+      "seconds": 12.5
+    },
+    {
+      "n": 5,
+      "narration": "Netflix began in 1997, founded in California by Reed Hastings and Marc Randolph. The idea: rent DVDs by mail.",
+      "visual": "Stock footage of late-1990s California suburbs; illustrated DVD discs in red envelopes.",
+      "source": "stock",
+      "seconds": 9.5
+    },
+    {
+      "n": 6,
+      "narration": "DVDs were new, light, and cheap to post. Randolph and Hastings famously tested the idea by mailing a disc to themselves to see if it would survive the trip.",
+      "visual": "Illustration of a single disc in a greeting-card envelope landing in a mailbox.",
+      "source": "ai-image",
+      "seconds": 13.5
+    },
+    {
+      "n": 7,
+      "narration": "In 1999, Netflix launched its subscription: a monthly fee, keep the movies as long as you like, and no late fees.",
+      "visual": "Kinetic text: NO DUE DATES. NO LATE FEES. Red envelope icon stamping each line.",
+      "source": "motion-graphics",
+      "seconds": 10
+    },
+    {
+      "n": 8,
+      "narration": "That last part was a direct shot at Blockbuster, which made a huge chunk of its money from customers returning tapes late.",
+      "visual": "Generic video-rental shop interior with a return slot, warm 1990s grade (no Blockbuster branding).",
+      "source": "stock",
+      "seconds": 10.5
+    },
+    {
+      "n": 9,
+      "narration": "In 2000, Netflix was losing money and offered to sell itself to Blockbuster for fifty million dollars. Blockbuster passed.",
+      "visual": "Motion graphic: a deal card for $50M sliding across a table and being pushed back.",
+      "source": "motion-graphics",
+      "seconds": 9.5
+    },
+    {
+      "n": 10,
+      "narration": "Netflix kept going. It went public in 2002, built distribution centres across America, and learned to get discs to most customers in about a day.",
+      "visual": "Animated US map with distribution centres lighting up and one-day delivery radius circles.",
+      "source": "motion-graphics",
+      "seconds": 12
+    },
+    {
+      "n": 11,
+      "narration": "Its recommendation engine got so important that in 2006 it offered a one-million-dollar prize to anyone who could improve it by ten percent.",
+      "visual": "Kinetic text: $1,000,000 PRIZE, with an algorithm-style graph animating beneath.",
+      "source": "motion-graphics",
+      "seconds": 11
+    },
+    {
+      "n": 12,
+      "narration": "By the late 2000s, the red envelope was winning. Blockbuster was collapsing, and Netflix had millions of loyal subscribers.",
+      "visual": "Stack of red envelopes growing; a generic rental store sign flickering off.",
+      "source": "motion-graphics",
+      "seconds": 9.5
+    },
+    {
+      "n": 13,
+      "narration": "Most CEOs would have protected that. Reed Hastings did the opposite.",
+      "visual": "Silhouette of an executive at a window, city at dusk, slow push-in.",
+      "source": "stock",
+      "seconds": 6
+    },
+    {
+      "n": 14,
+      "narration": "He had always said the company was called Netflix, not DVDs-by-mail, for a reason. He believed the future was the internet, and that physical discs were a business with an expiry date.",
+      "visual": "Animated text: NET + FLIX, with a disc morphing into a play button.",
+      "source": "motion-graphics",
+      "seconds": 15
+    },
+    {
+      "n": 15,
+      "narration": "In 2007, Netflix launched streaming, included for subscribers. The catalogue was small, the quality was rough, and most people still watched discs.",
+      "visual": "Stock footage of a 2007-era laptop showing a low-resolution video player loading.",
+      "source": "stock",
+      "seconds": 10.5
+    },
+    {
+      "n": 16,
+      "narration": "But broadband was getting faster every year. Game consoles, TVs and phones were going online. Hastings could see where this was heading.",
+      "visual": "Motion graphic: internet speed bars climbing; device icons connecting one by one.",
+      "source": "motion-graphics",
+      "seconds": 10.5
+    },
+    {
+      "n": 17,
+      "narration": "There was a catch. Streaming rights cost a fortune, and studios were raising prices. To pay for streaming, Netflix needed more money from every customer.",
+      "visual": "Animated price tags on film reels multiplying, coins draining from a jar.",
+      "source": "motion-graphics",
+      "seconds": 12
+    },
+    {
+      "n": 18,
+      "narration": "In July 2011, Netflix announced that DVDs and streaming would now be separate plans. For many customers who wanted both, that meant a price rise of about sixty percent.",
+      "visual": "Kinetic text: $9.99 to $15.98, the number pulsing red.",
+      "source": "motion-graphics",
+      "seconds": 13.5
+    },
+    {
+      "n": 19,
+      "narration": "Customers were furious. Hundreds of thousands of angry comments poured in.",
+      "visual": "Generic comment feed scrolling fast, blurred text, red angry reactions.",
+      "source": "motion-graphics",
+      "seconds": 6
+    },
+    {
+      "n": 20,
+      "narration": "Then, in September, Hastings made it worse. He announced that the DVD business would be spun off into a separate company with a separate website. Its name: Qwikster.",
+      "visual": "Illustrated split screen: one company cracking into two; the word QWIKSTER appears on the broken half.",
+      "source": "ai-image",
+      "seconds": 13
+    },
+    {
+      "n": 21,
+      "narration": "Two websites, two bills, two separate queues. People mocked the name. It turned out someone already used the Qwikster handle on Twitter.",
+      "visual": "Motion graphic: two queues and two bills duplicating; a confused emoji.",
+      "source": "motion-graphics",
+      "seconds": 10.5
+    },
+    {
+      "n": 22,
+      "narration": "Hastings published an apology that began, and I quote, I messed up.",
+      "visual": "Typewriter text on a blank page: I MESSED UP.",
+      "source": "motion-graphics",
+      "seconds": 6
+    },
+    {
+      "n": 23,
+      "narration": "Less than a month later, Netflix cancelled Qwikster entirely. But the damage was done.",
+      "visual": "Stock footage of a sign being taken down; QWIKSTER text fading.",
+      "source": "stock",
+      "seconds": 7
+    },
+    {
+      "n": 24,
+      "narration": "In the third quarter of 2011, Netflix reported losing around 800,000 US subscribers. The stock, which had been near three hundred dollars that summer, sank below eighty.",
+      "visual": "Animated chart: subscriber line dipping, stock line crashing, numbers counting down.",
+      "source": "motion-graphics",
+      "seconds": 12.5
+    },
+    {
+      "n": 25,
+      "narration": "So was it a disaster? Here's what most people miss. Netflix reversed the name, the split and the extra website. It did not reverse the bet.",
+      "visual": "Kinetic text: REVERSED: QWIKSTER. KEPT: THE BET.",
+      "source": "motion-graphics",
+      "seconds": 12.5
+    },
+    {
+      "n": 26,
+      "narration": "The separate pricing stayed. Streaming became the core product, and DVD-by-mail was left to slowly shrink on its own.",
+      "visual": "Motion graphic: a big streaming circle growing while a small disc circle fades.",
+      "source": "motion-graphics",
+      "seconds": 9.5
+    },
+    {
+      "n": 27,
+      "narration": "And Netflix made a second, even bigger bet. If studios kept raising prices on their movies, Netflix would make its own.",
+      "visual": "Stock footage of a film set: lights, clapperboard, crew silhouettes.",
+      "source": "stock",
+      "seconds": 10
+    },
+    {
+      "n": 28,
+      "narration": "In 2011, it reportedly committed around one hundred million dollars to two full seasons of a political drama without a pilot: House of Cards. It premiered in 2013.",
+      "visual": "Kinetic text: TWO SEASONS. NO PILOT. Gold dollar figures falling.",
+      "source": "motion-graphics",
+      "seconds": 13
+    },
+    {
+      "n": 29,
+      "narration": "It released every episode at once. A new habit was born: binge-watching.",
+      "visual": "Stock footage of a person on a sofa at night lit by a TV, episode counter ticking up.",
+      "source": "stock",
+      "seconds": 6
+    },
+    {
+      "n": 30,
+      "narration": "From there, Netflix expanded worldwide, launching in more than one hundred and thirty new countries on a single day in January 2016.",
+      "visual": "Animated world map turning red country by country in a single sweep.",
+      "source": "motion-graphics",
+      "seconds": 10.5
+    },
+    {
+      "n": 31,
+      "narration": "Netflix later grew to more than three hundred million paid memberships worldwide. The red envelope business it was so afraid to let go of finally shut down in September 2023.",
+      "visual": "Kinetic number: 300,000,000+. Then a single last red envelope sliding into a mailbox.",
+      "source": "motion-graphics",
+      "seconds": 14
+    },
+    {
+      "n": 32,
+      "narration": "Now compare that to Blockbuster. Blockbuster protected the business that was paying the bills, especially late fees, and it went bankrupt in 2010.",
+      "visual": "Split screen: a dimming generic rental store vs a glowing streaming interface.",
+      "source": "motion-graphics",
+      "seconds": 11
+    },
+    {
+      "n": 33,
+      "narration": "Netflix attacked the business that was paying its bills, nearly broke itself doing it, and became one of the most valuable media companies in the world.",
+      "visual": "Gold arrow rising out of a cracked red envelope.",
+      "source": "motion-graphics",
+      "seconds": 12.5
+    },
+    {
+      "n": 34,
+      "narration": "The lesson from Qwikster is subtle. Netflix got the execution horribly wrong. Too fast, too confusing, and too little explanation.",
+      "visual": "Three kinetic words stacking: TOO FAST. TOO CONFUSING. TOO LITTLE EXPLAINED.",
+      "source": "motion-graphics",
+      "seconds": 9.5
+    },
+    {
+      "n": 35,
+      "narration": "But it got the direction exactly right. Customers forgive a clumsy move in the right direction far more than a smooth move in the wrong one.",
+      "visual": "Compass needle swinging and settling on a play-button icon.",
+      "source": "motion-graphics",
+      "seconds": 12.5
+    },
+    {
+      "n": 36,
+      "narration": "If you don't replace your own business, someone else will. Netflix chose to be the one holding the knife.",
+      "visual": "Final shot: a red envelope slowly torn open, revealing light behind it.",
+      "source": "ai-image",
+      "seconds": 9.5
+    }
+  ],
+  "outro": "Next on Built & Broken: LEGO was losing money so fast it was weeks from running out of cash. How a 35-year-old outsider saved it by going back to the brick. Subscribe so you don't miss it.",
+  "thumbnailConcepts": [
+    "A red envelope torn in half with a play button inside, text: \"ON PURPOSE\"",
+    "A stock chart crashing over a red logo-free screen, text: \"-75%\"",
+    "The word QWIKSTER cracked, text: \"I MESSED UP\""
+  ],
+  "shortSegment": {
+    "startScene": 18,
+    "endScene": 23,
+    "hookLine": "Netflix's worst mistake: Qwikster"
+  },
+  "sources": [
+    "https://about.netflix.com/en/news/an-explanation-and-some-reflections",
+    "https://www.nytimes.com/2011/10/11/business/netflix-reverses-decision-to-split-services.html",
+    "https://www.nytimes.com/2011/10/25/technology/netflix-lost-800000-members-with-price-rise-and-split-plan.html",
+    "https://about.netflix.com/en/news/netflix-is-now-available-around-the-world",
+    "https://en.wikipedia.org/wiki/Netflix",
+    "https://en.wikipedia.org/wiki/Qwikster"
+  ],
+  "aiDisclosure": false
+}

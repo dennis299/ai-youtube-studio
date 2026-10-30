@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { syncJobs } from "@/lib/sync";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -16,6 +17,7 @@ import { getChannel, getResearch } from "@/lib/store";
 const fmt = new Intl.NumberFormat("en", { notation: "compact" });
 
 export default async function ResearchPage(props: PageProps<"/channels/[slug]">) {
+  await syncJobs();
   const { slug } = await props.params;
   const [channel, research, jobs, settings] = await Promise.all([
     getChannel(slug), getResearch(slug), pendingJobs(slug, ["research"]), loadSettings(),

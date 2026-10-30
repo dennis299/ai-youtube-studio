@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { syncJobs } from "@/lib/sync";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -22,6 +23,7 @@ import { getChannel, getProduction, getPublish, getStoryboard, getVideo } from "
 const mmss = (s: number) => `${Math.floor(s / 60)}:${String(Math.round(s % 60)).padStart(2, "0")}`;
 
 export default async function VideoPage(props: PageProps<"/channels/[slug]/videos/[id]">) {
+  await syncJobs();
   const { slug, id } = await props.params;
   const [channel, video, sb, prod, pub, settings] = await Promise.all([
     getChannel(slug), getVideo(slug, id), getStoryboard(slug, id), getProduction(slug, id), getPublish(slug, id), loadSettings(),

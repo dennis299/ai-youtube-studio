@@ -1,0 +1,296 @@
+{
+  "videoId": "2026-11-w1-5",
+  "titleOptions": [
+    "Kodak Invented the Digital Camera, Then Hid It",
+    "The Camera That Killed Kodak Was Made by Kodak",
+    "Kodak Saw the Future in 1975"
+  ],
+  "chosenTitle": "Kodak Invented the Digital Camera, Then Hid It",
+  "hook": "In 1975, a 24-year-old engineer at Kodak built the world's first digital camera. It weighed about eight pounds and took twenty-three seconds to save one black-and-white picture. When he showed it to management, the reaction was polite, and cautious. Thirty-seven years later, Kodak filed for bankruptcy.",
+  "beats": [
+    {
+      "heading": "Cold open: the toaster-sized camera",
+      "narration": "The first digital camera is built inside the company it would destroy."
+    },
+    {
+      "heading": "You press the button, we do the rest",
+      "narration": "George Eastman builds a film empire on the razor-and-blades model."
+    },
+    {
+      "heading": "The prototype",
+      "narration": "Steve Sasson's camera and management's reaction."
+    },
+    {
+      "heading": "Seeing it coming",
+      "narration": "Kodak predicted digital, invested in it, and still couldn't let film go."
+    },
+    {
+      "heading": "The fall",
+      "narration": "Phones, social media and the 2012 bankruptcy."
+    },
+    {
+      "heading": "The lesson",
+      "narration": "Kodak didn't miss digital. It missed what digital would do to the business of photos."
+    }
+  ],
+  "scenes": [
+    {
+      "n": 1,
+      "narration": "In 1975, a 24-year-old engineer at Kodak built the world's first digital camera.",
+      "visual": "Illustration of a bulky toaster-sized prototype camera on a 1970s lab bench, cables everywhere.",
+      "source": "ai-image",
+      "seconds": 6.5
+    },
+    {
+      "n": 2,
+      "narration": "It weighed about eight pounds, recorded images onto a cassette tape, and took twenty-three seconds to save a single black-and-white picture.",
+      "visual": "Kinetic stats: 8 LBS. CASSETTE TAPE. 23 SECONDS. 0.01 MEGAPIXELS.",
+      "source": "motion-graphics",
+      "seconds": 10
+    },
+    {
+      "n": 3,
+      "narration": "When he showed it to management, the reaction was polite, and cautious.",
+      "visual": "Silhouettes of 1970s executives around a table, slow push-in.",
+      "source": "ai-image",
+      "seconds": 6
+    },
+    {
+      "n": 4,
+      "narration": "Thirty-seven years later, Kodak filed for bankruptcy. Killed, in part, by the very thing it invented.",
+      "visual": "Title card: BUILT & BROKEN, KODAK, film strip cracking into pixels.",
+      "source": "motion-graphics",
+      "seconds": 8
+    },
+    {
+      "n": 5,
+      "narration": "Kodak's story begins with George Eastman, a bank clerk in Rochester, New York, who was obsessed with making photography simple.",
+      "visual": "Public-domain archive photos of 1880s Rochester and early cameras.",
+      "source": "archive",
+      "seconds": 9.5
+    },
+    {
+      "n": 6,
+      "narration": "Photography back then meant heavy glass plates, chemicals and a tent full of equipment. Eastman wanted a camera anyone could use.",
+      "visual": "Archive illustrations of 19th-century photographers with tripods and portable darkroom tents.",
+      "source": "archive",
+      "seconds": 10
+    },
+    {
+      "n": 7,
+      "narration": "In 1888 he launched the Kodak camera, sold already loaded with film. You took your pictures, mailed the whole camera back, and Kodak developed them and sent it back reloaded.",
+      "visual": "Animated loop: a box camera travelling by post to a lab and back with prints.",
+      "source": "motion-graphics",
+      "seconds": 14
+    },
+    {
+      "n": 8,
+      "narration": "The slogan said it all: You press the button, we do the rest.",
+      "visual": "Vintage-style typography on aged paper: YOU PRESS THE BUTTON, WE DO THE REST.",
+      "source": "motion-graphics",
+      "seconds": 6.5
+    },
+    {
+      "n": 9,
+      "narration": "Then came the Brownie in 1900, a camera that cost one dollar. Suddenly, everyone could take photos.",
+      "visual": "Public-domain archive photos of families holding small box cameras at the beach.",
+      "source": "archive",
+      "seconds": 8.5
+    },
+    {
+      "n": 10,
+      "narration": "But here's the real genius. Kodak didn't make most of its money on cameras. It made money on film, on chemicals, on paper and on developing. Every single photo, for the rest of your life.",
+      "visual": "Motion graphic: a cheap camera icon, then a long line of film rolls and prints stretching off screen, coins dropping beside each.",
+      "source": "motion-graphics",
+      "seconds": 16
+    },
+    {
+      "n": 11,
+      "narration": "Sell the camera cheap, sell the film forever. For nearly a century, it worked beautifully.",
+      "visual": "Animated revenue stream flowing steadily from a film canister.",
+      "source": "motion-graphics",
+      "seconds": 7.5
+    },
+    {
+      "n": 12,
+      "narration": "By the 1970s, Kodak dominated American photography. It sold the large majority of film and cameras in the United States. The phrase Kodak moment entered everyday language.",
+      "visual": "Stock footage of 1970s family gatherings, birthday cakes and snapshots.",
+      "source": "stock",
+      "seconds": 12.5
+    },
+    {
+      "n": 13,
+      "narration": "Which brings us back to 1975, and Steve Sasson.",
+      "visual": "Return to the prototype illustration, now in warmer light.",
+      "source": "ai-image",
+      "seconds": 5
+    },
+    {
+      "n": 14,
+      "narration": "Sasson's assignment was open-ended: see if a new kind of light sensor could be useful. He built a camera from a movie-camera lens, a sensor, some circuit boards and a tape recorder.",
+      "visual": "Exploded-view animation of a lens, sensor chip, circuit boards and cassette deck combining.",
+      "source": "motion-graphics",
+      "seconds": 15
+    },
+    {
+      "n": 15,
+      "narration": "To view a picture, you had to play the tape into a special device connected to a TV.",
+      "visual": "Illustration of a 1970s TV showing a blurry black-and-white face made of large pixels.",
+      "source": "ai-image",
+      "seconds": 9
+    },
+    {
+      "n": 16,
+      "narration": "Sasson later recalled that the people he showed it to wondered why anyone would want to look at their pictures on a television. And it raised an uncomfortable question: what happens to film?",
+      "visual": "Kinetic text: WHY WOULD ANYONE...? then WHAT ABOUT FILM? in gold.",
+      "source": "motion-graphics",
+      "seconds": 15.5
+    },
+    {
+      "n": 17,
+      "narration": "Kodak patented the digital camera in 1978. And then, for years, very little happened.",
+      "visual": "Animated patent document stamping, then a calendar flipping slowly.",
+      "source": "motion-graphics",
+      "seconds": 7
+    },
+    {
+      "n": 18,
+      "narration": "It's tempting to say Kodak's leaders were blind. They weren't. In 1981, an internal study looked hard at digital photography.",
+      "visual": "Illustrated stack of 1980s report binders on a desk, top page marked CONFIDENTIAL.",
+      "source": "ai-image",
+      "seconds": 9.5
+    },
+    {
+      "n": 19,
+      "narration": "Its conclusion, as later described by the man who led it, was that digital had the potential to replace film, but that Kodak had roughly ten years to prepare.",
+      "visual": "Animated countdown timer reading 10 YEARS over a film reel.",
+      "source": "motion-graphics",
+      "seconds": 13.5
+    },
+    {
+      "n": 20,
+      "narration": "They were right. And Kodak did prepare, in a way. It invested billions in digital research. In the 1990s, it sold digital cameras, and for a while it was one of the top sellers in America.",
+      "visual": "Stock footage of 2000s digital compact cameras on a store shelf; sales chart rising.",
+      "source": "stock",
+      "seconds": 16.5
+    },
+    {
+      "n": 21,
+      "narration": "The problem wasn't technology. It was money. A digital photo didn't need film, chemicals or prints. Each one earned Kodak almost nothing.",
+      "visual": "Motion graphic: the film revenue stream from earlier drying up to a trickle.",
+      "source": "motion-graphics",
+      "seconds": 10.5
+    },
+    {
+      "n": 22,
+      "narration": "Film had famously fat profit margins. Digital cameras were a brutal, low-margin electronics business, fighting against Sony, Canon and Nikon.",
+      "visual": "Two piles of coins side by side: a tall FILM pile and a thin DIGITAL pile.",
+      "source": "motion-graphics",
+      "seconds": 9.5
+    },
+    {
+      "n": 23,
+      "narration": "So every step into digital meant taking money away from the business that paid everyone's salaries. Kodak kept trying to protect film while moving into digital at the same time.",
+      "visual": "Tug-of-war animation between a film canister and a memory card.",
+      "source": "motion-graphics",
+      "seconds": 14
+    },
+    {
+      "n": 24,
+      "narration": "In 2001, it bought a photo-sharing website called Ofoto. It had a front-row seat to people sharing pictures online.",
+      "visual": "Generic early-2000s web browser with a photo gallery loading, pixelated.",
+      "source": "stock",
+      "seconds": 9.5
+    },
+    {
+      "n": 25,
+      "narration": "But Kodak mainly used it to get people to order prints. It saw the internet as a new way to sell paper, not as a new way to share moments.",
+      "visual": "Animated arrow from a web gallery into a printer pushing out photo prints.",
+      "source": "motion-graphics",
+      "seconds": 14
+    },
+    {
+      "n": 26,
+      "narration": "Then the phone camera arrived. Then social media. Photos stopped being things you printed and put in albums. They became things you sent and forgot.",
+      "visual": "Fast montage of stock footage: phones snapping photos, endless scrolling feeds.",
+      "source": "stock",
+      "seconds": 12
+    },
+    {
+      "n": 27,
+      "narration": "The whole market for standalone cameras started to shrink, and the market for film collapsed almost completely.",
+      "visual": "Animated chart: film sales line falling off a cliff after 2005.",
+      "source": "motion-graphics",
+      "seconds": 8.5
+    },
+    {
+      "n": 28,
+      "narration": "Kodak cut tens of thousands of jobs, closed factories in Rochester and around the world, and tried new businesses like home printers.",
+      "visual": "Stock footage of an empty factory floor and a demolished industrial building.",
+      "source": "stock",
+      "seconds": 10.5
+    },
+    {
+      "n": 29,
+      "narration": "For a while, it survived on a strange source of income: licensing its digital imaging patents, including technology inside many of the phones that were killing it.",
+      "visual": "Motion graphic: patent icons flowing into phone silhouettes, coins flowing back.",
+      "source": "motion-graphics",
+      "seconds": 12.5
+    },
+    {
+      "n": 30,
+      "narration": "In January 2012, Eastman Kodak filed for bankruptcy protection.",
+      "visual": "Kinetic text: JANUARY 2012, CHAPTER 11, over a grey Rochester skyline.",
+      "source": "motion-graphics",
+      "seconds": 5
+    },
+    {
+      "n": 31,
+      "narration": "It emerged in 2013 as a much smaller company focused on commercial printing and imaging. The Kodak most people knew, the one in every family photo album, was gone.",
+      "visual": "Old photo album pages turning slowly, faded prints.",
+      "source": "stock",
+      "seconds": 13.5
+    },
+    {
+      "n": 32,
+      "narration": "Here's the strange twist. In the same month that Kodak filed for bankruptcy, a photo-sharing app with about a dozen employees was taking off. A few months later it sold for a billion dollars. It was called Instagram.",
+      "visual": "Split screen: a dim old factory vs a bright phone screen filling with photos.",
+      "source": "motion-graphics",
+      "seconds": 17.5
+    },
+    {
+      "n": 33,
+      "narration": "Kodak understood that pictures would become digital. What it didn't fully accept was that the money in photography would move away from making pictures, and towards sharing them.",
+      "visual": "Kinetic text: MAKING PICTURES to SHARING MOMENTS, the arrow glowing gold.",
+      "source": "motion-graphics",
+      "seconds": 13
+    },
+    {
+      "n": 34,
+      "narration": "The company that taught the world to capture its moments couldn't let go of the business of printing them.",
+      "visual": "Final shot: a single developed print fading to white, then a phone screen lighting up.",
+      "source": "stock",
+      "seconds": 9.5
+    }
+  ],
+  "outro": "That's the end of week one on Built & Broken. Next week: how Nintendo sold playing cards for a hundred years before Mario. Subscribe so you don't miss it.",
+  "thumbnailConcepts": [
+    "A vintage film roll cracking into pixels, text: \"THEY INVENTED IT\"",
+    "A bulky 1975 prototype camera in a spotlight, text: \"KEEP QUIET\"",
+    "A yellow film box with a red bankruptcy stamp (no real logo), text: \"1975 → 2012\""
+  ],
+  "shortSegment": {
+    "startScene": 13,
+    "endScene": 17,
+    "hookLine": "Kodak built the first digital camera in 1975"
+  },
+  "sources": [
+    "https://www.nytimes.com/2015/05/03/magazine/the-lessons-of-kodak.html",
+    "https://lens.blogs.nytimes.com/2008/08/12/the-first-digital-camera/",
+    "https://www.forbes.com/sites/chunkamui/2012/01/18/how-kodak-failed/",
+    "https://www.bbc.com/news/business-16611040",
+    "https://en.wikipedia.org/wiki/Kodak",
+    "https://en.wikipedia.org/wiki/Steven_Sasson"
+  ],
+  "aiDisclosure": false
+}

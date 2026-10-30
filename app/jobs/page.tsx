@@ -3,13 +3,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { CopyButton, SubmitButton } from "@/components/client-bits";
 import { Flash } from "@/components/flash";
 import { retryJobAction, syncJobsAction } from "@/app/actions";
-import { ingestDoneJobs, listJobs } from "@/lib/jobs";
+import { listJobs } from "@/lib/jobs";
+import { syncJobs } from "@/lib/sync";
 import { loadSettings } from "@/lib/settings";
 
 const VARIANT = { pending: "secondary", in_progress: "default", done: "outline", failed: "destructive" } as const;
 
 export default async function JobsPage(props: PageProps<"/jobs">) {
-  await ingestDoneJobs();
+  await syncJobs();
   const [jobs, settings] = await Promise.all([listJobs(), loadSettings()]);
   const open = jobs.filter((j) => j.status === "pending" || j.status === "in_progress");
 

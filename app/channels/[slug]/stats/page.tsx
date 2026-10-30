@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { syncJobs } from "@/lib/sync";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { ChannelNav } from "@/components/channel-nav";
@@ -13,6 +14,7 @@ import { getChannel, getInsights, listStats, listVideos } from "@/lib/store";
 const n = new Intl.NumberFormat("en");
 
 export default async function StatsPage(props: PageProps<"/channels/[slug]/stats">) {
+  await syncJobs();
   const { slug } = await props.params;
   const [channel, stats, videos, insights, jobs, settings] = await Promise.all([
     getChannel(slug), listStats(slug), listVideos(slug), getInsights(slug), pendingJobs(slug, ["insights"]), loadSettings(),

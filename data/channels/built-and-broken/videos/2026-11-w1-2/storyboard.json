@@ -1,0 +1,334 @@
+{
+  "videoId": "2026-11-w1-2",
+  "titleOptions": [
+    "The 17-Year-Old Who Built IKEA",
+    "IKEA Was Banned From Furniture Fairs. So It Built This.",
+    "How a Table Leg Created a $50 Billion Empire"
+  ],
+  "chosenTitle": "The 17-Year-Old Who Built IKEA",
+  "hook": "In the 1950s, Sweden's furniture industry tried to kill a young upstart. Suppliers were pressured to stop selling to him, and he was shut out of trade fairs. That boycott is the reason almost every home on Earth now has a piece of IKEA in it.",
+  "beats": [
+    {
+      "heading": "Cold open: the boycott",
+      "narration": "Sweden's furniture industry tries to shut out one stubborn young seller."
+    },
+    {
+      "heading": "A boy who sold matches",
+      "narration": "Ingvar Kamprad starts trading at five and founds IKEA at seventeen."
+    },
+    {
+      "heading": "The price war",
+      "narration": "Cheap mail-order furniture triggers a price war and a quality crisis, and the first showroom fixes it."
+    },
+    {
+      "heading": "The table leg",
+      "narration": "One employee removes the legs from a table to fit it in a car, and flat-pack is born."
+    },
+    {
+      "heading": "Turning the boycott into a weapon",
+      "narration": "Banned by suppliers, IKEA designs its own furniture and finds its own factories."
+    },
+    {
+      "heading": "The machine",
+      "narration": "Self-service warehouses, the maze, the meatballs: a system designed around one idea, low prices."
+    },
+    {
+      "heading": "The lesson",
+      "narration": "Constraints didn't slow IKEA down. They became the business model."
+    }
+  ],
+  "scenes": [
+    {
+      "n": 1,
+      "narration": "In the 1950s, Sweden's furniture industry tried to kill a young upstart.",
+      "visual": "Archive black-and-white photos of 1950s Swedish furniture showrooms; ominous low strings.",
+      "source": "archive",
+      "seconds": 6
+    },
+    {
+      "n": 2,
+      "narration": "Suppliers were pressured to stop selling to him, and he was shut out of trade fairs.",
+      "visual": "Motion graphic: a map of Sweden with factories lighting up red and lines to one small dot being cut.",
+      "source": "motion-graphics",
+      "seconds": 8
+    },
+    {
+      "n": 3,
+      "narration": "That boycott is the reason almost every home on Earth now has a piece of IKEA in it.",
+      "visual": "Fast montage of stock footage: flat-pack boxes, an Allen key, a family assembling a bookshelf.",
+      "source": "stock",
+      "seconds": 9
+    },
+    {
+      "n": 4,
+      "narration": "This is the story of how a teenager from a Swedish farm turned every disadvantage into the world's biggest furniture company.",
+      "visual": "Title card: BUILT & BROKEN, IKEA, over a rural Swedish farm landscape.",
+      "source": "stock",
+      "seconds": 10
+    },
+    {
+      "n": 5,
+      "narration": "Ingvar Kamprad grew up on a farm called Elmtaryd, near the village of Agunnaryd, in Småland, a poor, rocky region of southern Sweden known for thrifty people.",
+      "visual": "Map zoom into Småland, Sweden; stock footage of red wooden farmhouses and stone walls.",
+      "source": "stock",
+      "seconds": 12.5
+    },
+    {
+      "n": 6,
+      "narration": "He started selling early. As a boy, he bought matches in bulk in Stockholm and sold them one box at a time to neighbours at a profit.",
+      "visual": "Illustrated 1930s boy on a bicycle with a box of matches on a country road.",
+      "source": "ai-image",
+      "seconds": 12.5
+    },
+    {
+      "n": 7,
+      "narration": "Then fish, Christmas cards, seeds and pencils. Anything he could buy cheap and sell for a little more.",
+      "visual": "Kinetic text listing products, each popping in with a small price tag.",
+      "source": "motion-graphics",
+      "seconds": 9
+    },
+    {
+      "n": 8,
+      "narration": "In 1943, at seventeen, he registered his own company. He named it using his initials and the farm and village he grew up in: Ingvar Kamprad, Elmtaryd, Agunnaryd. I K E A.",
+      "visual": "Animated letters I, K, E, A assembling from the words Ingvar, Kamprad, Elmtaryd, Agunnaryd.",
+      "source": "motion-graphics",
+      "seconds": 15
+    },
+    {
+      "n": 9,
+      "narration": "At first IKEA had nothing to do with furniture. It sold pens, wallets, picture frames and watches by mail order, delivered by the local milk van.",
+      "visual": "Archive-style photo of a 1940s milk truck on a gravel road; product illustrations floating out of it.",
+      "source": "archive",
+      "seconds": 12.5
+    },
+    {
+      "n": 10,
+      "narration": "In 1948 Kamprad noticed that local factories made good furniture cheaply, and he added it to his catalogue. It sold so well that he soon dropped almost everything else.",
+      "visual": "Animated catalogue page flipping, small items fading out as chairs and tables take over.",
+      "source": "motion-graphics",
+      "seconds": 13.5
+    },
+    {
+      "n": 11,
+      "narration": "In 1951 he published the first IKEA catalogue. But mail-order furniture had a problem.",
+      "visual": "Generic illustrated 1950s mail-order catalogue cover on a kitchen table (no real IKEA artwork).",
+      "source": "ai-image",
+      "seconds": 7
+    },
+    {
+      "n": 12,
+      "narration": "IKEA and a rival were locked in a price war, cutting prices again and again. And when prices fall, quality usually falls with them.",
+      "visual": "Motion graphic: two price tags racing downward, a chair beside them getting visibly flimsier.",
+      "source": "motion-graphics",
+      "seconds": 11.5
+    },
+    {
+      "n": 13,
+      "narration": "Customers couldn't touch the furniture before ordering. Complaints piled up. Kamprad's whole business was in danger.",
+      "visual": "Stack of complaint letters animating onto a desk; a wobbly chair leg snapping.",
+      "source": "motion-graphics",
+      "seconds": 8
+    },
+    {
+      "n": 14,
+      "narration": "His fix was simple and brilliant. In 1953 he opened a showroom in the town of Älmhult, so people could see, sit on and compare the furniture before they bought it.",
+      "visual": "Illustrated 1950s showroom interior with families testing sofas, warm daylight.",
+      "source": "ai-image",
+      "seconds": 14.5
+    },
+    {
+      "n": 15,
+      "narration": "Now IKEA could compete on value instead of just price. Customers could see why the cheaper chair was the better deal.",
+      "visual": "Split screen: two chairs with price tags; the IKEA one gets a gold check mark.",
+      "source": "motion-graphics",
+      "seconds": 10
+    },
+    {
+      "n": 16,
+      "narration": "And that is exactly when the established furniture industry decided IKEA had to be stopped.",
+      "visual": "Slow push-in on a dark boardroom table with cigar smoke, 1950s style, illustrated.",
+      "source": "ai-image",
+      "seconds": 7.5
+    },
+    {
+      "n": 17,
+      "narration": "Competitors pressured manufacturers to stop supplying IKEA, and IKEA was barred from selling at a major furniture fair. Without suppliers, a furniture shop has nothing to sell.",
+      "visual": "Map graphic: supplier lines to IKEA turning red and snapping one by one.",
+      "source": "motion-graphics",
+      "seconds": 12.5
+    },
+    {
+      "n": 18,
+      "narration": "Most small companies would have died here. IKEA did two things instead, and both of them still define the company today.",
+      "visual": "Kinetic text: TWO DECISIONS, with the numbers 1 and 2 dropping in.",
+      "source": "motion-graphics",
+      "seconds": 10
+    },
+    {
+      "n": 19,
+      "narration": "Decision one: if nobody will sell us furniture, we'll design our own. IKEA began creating products in-house, so it controlled the design, the cost and the materials.",
+      "visual": "Stock footage of a designer sketching furniture on paper, then a 3D wireframe chair rotating.",
+      "source": "stock",
+      "seconds": 12.5
+    },
+    {
+      "n": 20,
+      "narration": "Decision two: if Swedish factories won't make it, we'll find factories that will. In the early 1960s, IKEA turned to manufacturers in Poland, where costs were far lower.",
+      "visual": "Animated map line from Sweden across the Baltic Sea to Poland, factories lighting up gold.",
+      "source": "motion-graphics",
+      "seconds": 13
+    },
+    {
+      "n": 21,
+      "narration": "The boycott that was meant to starve IKEA ended up handing it the two things that would make it unbeatable: its own designs and a cheaper supply chain.",
+      "visual": "Gold crack effect turning into a gold arrow pointing up.",
+      "source": "motion-graphics",
+      "seconds": 13
+    },
+    {
+      "n": 22,
+      "narration": "Around the same time came the most famous accident in furniture history.",
+      "visual": "Slow-motion stock shot of a car boot opening in daylight.",
+      "source": "stock",
+      "seconds": 6
+    },
+    {
+      "n": 23,
+      "narration": "In 1956, an IKEA designer named Gillis Lundgren was trying to fit a table into a car after a photo shoot. It wouldn't go in. So he took the legs off.",
+      "visual": "Illustration: a 1950s man unscrewing table legs beside a small car, table top leaning against it.",
+      "source": "ai-image",
+      "seconds": 14.5
+    },
+    {
+      "n": 24,
+      "narration": "That small moment sparked the idea that changed everything: what if furniture shipped flat, and the customer put it together at home?",
+      "visual": "Animated exploded view of a table separating into flat parts and stacking into a box.",
+      "source": "motion-graphics",
+      "seconds": 10.5
+    },
+    {
+      "n": 25,
+      "narration": "Flat packs take a fraction of the space. More fit in every truck and every warehouse, and fewer break in transport. Every one of those savings goes into a lower price.",
+      "visual": "Motion graphic: a truck filled with assembled furniture vs the same truck stacked with flat packs, counter showing how many more fit.",
+      "source": "motion-graphics",
+      "seconds": 14.5
+    },
+    {
+      "n": 26,
+      "narration": "And it turned the customer into part of the workforce. You pick it up. You carry it home. You build it. IKEA saves on labour, and you save on price.",
+      "visual": "Stock footage of a couple carrying boxes to a car, then laughing while assembling a shelf.",
+      "source": "stock",
+      "seconds": 14
+    },
+    {
+      "n": 27,
+      "narration": "In 1965, IKEA opened a giant store outside Stockholm. So many people came that staff couldn't keep up, so the manager opened the warehouse and let customers fetch products themselves.",
+      "visual": "Archive-style photo of crowds outside a large 1960s store; animated arrows pointing into a warehouse.",
+      "source": "archive",
+      "seconds": 14
+    },
+    {
+      "n": 28,
+      "narration": "Self-service became the IKEA model. The showroom shows you the dream, the warehouse hands you the box.",
+      "visual": "Stock footage of a big-box warehouse aisle with tall shelving, shoppers with flat trolleys.",
+      "source": "stock",
+      "seconds": 8.5
+    },
+    {
+      "n": 29,
+      "narration": "Every detail of the modern store serves the same goal. The one-way path walks you past every department. The restaurant keeps you shopping longer. The cheap hot dog at the exit leaves you with a good last memory.",
+      "visual": "Animated top-down floor plan with a winding one-way arrow path; icons for restaurant and exit food stand.",
+      "source": "motion-graphics",
+      "seconds": 17.5
+    },
+    {
+      "n": 30,
+      "narration": "Even the product names are a system. Swedish words and place names, sorted by category, so a name tells staff what kind of product it is.",
+      "visual": "Kinetic text of invented Swedish-sounding product names sliding into labelled category boxes.",
+      "source": "motion-graphics",
+      "seconds": 12.5
+    },
+    {
+      "n": 31,
+      "narration": "Kamprad himself became famous for thrift. He flew economy, drove an old Volvo for years, and told staff that wasting resources was a mortal sin at IKEA.",
+      "visual": "Stock footage of an old Volvo estate on a country road; economy airplane cabin.",
+      "source": "stock",
+      "seconds": 12.5
+    },
+    {
+      "n": 32,
+      "narration": "IKEA expanded across Europe through the 1970s, then North America, Asia and the Middle East.",
+      "visual": "Animated world map with store pins appearing decade by decade, counter rising.",
+      "source": "motion-graphics",
+      "seconds": 7.5
+    },
+    {
+      "n": 33,
+      "narration": "Today the IKEA brand has more than four hundred and fifty stores in over sixty markets, and yearly sales measured in the tens of billions of euros.",
+      "visual": "Big kinetic numbers: 450+ STORES, 60+ MARKETS over a timelapse of a store car park.",
+      "source": "motion-graphics",
+      "seconds": 12.5
+    },
+    {
+      "n": 34,
+      "narration": "The company Kamprad built is also unusually structured. Most of IKEA is owned by foundations, designed so the business could never be easily sold off or broken up.",
+      "visual": "Simple motion graphic of a company box sitting inside a foundation box, with a lock icon.",
+      "source": "motion-graphics",
+      "seconds": 13
+    },
+    {
+      "n": 35,
+      "narration": "IKEA's history has its controversies too, from Kamprad's admitted youthful political ties, which he later called the greatest mistake of his life, to questions about suppliers and forests. Size brings scrutiny.",
+      "visual": "Muted archive newspaper texture with blurred headlines; no identifiable people.",
+      "source": "archive",
+      "seconds": 14.5
+    },
+    {
+      "n": 36,
+      "narration": "Ingvar Kamprad died in 2018 at the age of ninety-one.",
+      "visual": "Quiet shot of a Småland forest at dawn, text: 1926 to 2018.",
+      "source": "stock",
+      "seconds": 5.5
+    },
+    {
+      "n": 37,
+      "narration": "Look back at the turning points. A price war forced the showroom. A boycott forced in-house design and cheaper factories. A table that wouldn't fit in a car created flat-pack.",
+      "visual": "Animated timeline with each turning point lighting gold: 1953, the boycott, 1956.",
+      "source": "motion-graphics",
+      "seconds": 14
+    },
+    {
+      "n": 38,
+      "narration": "None of those ideas came from a strategy meeting. Each one came from a problem that should have hurt IKEA.",
+      "visual": "Kinetic text: EVERY PROBLEM BECAME A FEATURE.",
+      "source": "motion-graphics",
+      "seconds": 9.5
+    },
+    {
+      "n": 39,
+      "narration": "That's the real lesson. The people trying to stop IKEA didn't slow it down. They designed its business model for it.",
+      "visual": "Final shot: a flat-pack box on a doorstep at sunset, slowly pushing in.",
+      "source": "stock",
+      "seconds": 10
+    }
+  ],
+  "outro": "Next on Built & Broken: Netflix lost 800,000 subscribers in a single quarter by attacking its own business, and it was the smartest thing it ever did. Subscribe so you don't miss it.",
+  "thumbnailConcepts": [
+    "A flat-pack box with a single table leg sticking out, gold crack on the box, text: \"BANNED\"",
+    "A teenager silhouette holding a match in front of a giant store, text: \"AGE 17\"",
+    "An Allen key cracked in half, text: \"THE ACCIDENT\""
+  ],
+  "shortSegment": {
+    "startScene": 22,
+    "endScene": 26,
+    "hookLine": "IKEA's flat-pack came from a table that didn't fit in a car"
+  },
+  "sources": [
+    "https://www.ikea.com/global/en/our-business/history/",
+    "https://about.ikea.com/en/about-us/history-of-ikea",
+    "https://en.wikipedia.org/wiki/IKEA",
+    "https://en.wikipedia.org/wiki/Ingvar_Kamprad",
+    "https://www.bbc.com/news/world-europe-42838064"
+  ],
+  "aiDisclosure": false
+}

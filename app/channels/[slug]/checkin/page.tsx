@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { syncJobs } from "@/lib/sync";
 import { CircleCheck } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ChannelNav } from "@/components/channel-nav";
@@ -14,6 +15,7 @@ import { getChannel, getStoryboard, listVideos } from "@/lib/store";
 const DAY = new Intl.DateTimeFormat("en", { weekday: "long", month: "short", day: "numeric", timeZone: "UTC" });
 
 export default async function CheckinPage(props: PageProps<"/channels/[slug]/checkin">) {
+  await syncJobs();
   const { slug } = await props.params;
   const sp = await props.searchParams;
   const [channel, all] = await Promise.all([getChannel(slug), listVideos(slug)]);
@@ -106,7 +108,7 @@ export default async function CheckinPage(props: PageProps<"/channels/[slug]/che
                       <>
                         <p className="italic">“{sb.hook}”</p>
                         <p className="text-xs text-muted-foreground">
-                          {sb.scenes.length} scenes · {Math.floor(secs / 60)}:{String(secs % 60).padStart(2, "0")} · Short: scenes {sb.shortSegment.startScene}–{sb.shortSegment.endScene}
+                          {sb.scenes.length} scenes · {Math.floor(secs / 60)}:{String(Math.round(secs % 60)).padStart(2, "0")} · Short: scenes {sb.shortSegment.startScene}–{sb.shortSegment.endScene}
                           {sb.aiDisclosure && " · AI disclosure ON"}
                         </p>
                         {ok ? (

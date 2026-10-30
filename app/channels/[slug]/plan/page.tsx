@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { syncJobs } from "@/lib/sync";
 import { ArrowRight } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -21,6 +22,7 @@ function defaultMonth(): string {
 }
 
 export default async function PlanPage(props: PageProps<"/channels/[slug]/plan">) {
+  await syncJobs();
   const { slug } = await props.params;
   const sp = await props.searchParams;
   const all = await listVideos(slug);

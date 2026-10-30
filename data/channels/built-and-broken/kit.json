@@ -1,0 +1,70 @@
+{
+  "nameOptions": [
+    {
+      "name": "Built & Broken",
+      "why": "Says the whole promise in three words: how companies were built and how they broke. Short, memorable, and the ampersand makes a strong logo mark."
+    },
+    {
+      "name": "Empire Rewind",
+      "why": "Strong for rise-and-fall stories, but it sits close to existing channels like Empire Lane."
+    },
+    {
+      "name": "The Fall Files",
+      "why": "A clear series feel, but it only covers collapses and leaves no room for build or comeback stories."
+    },
+    {
+      "name": "Boardroom Tales",
+      "why": "Friendly and story-led, but it sounds smaller than the channel's ambition."
+    },
+    {
+      "name": "Velof Ventures",
+      "why": "Keeps the existing channel name, but 'Velof' means nothing to a new viewer."
+    }
+  ],
+  "chosenName": "Built & Broken",
+  "handle": "@BuiltAndBrokenTV",
+  "description": "Every empire has two stories: how it was built, and how it broke.\n\nBuilt & Broken tells the true stories behind the world's biggest companies: the bets that made billionaires, the mistakes that erased giants, and the small decisions that changed everything. Nokia, Blockbuster, IKEA, Kodak, Nintendo, and the brands you use every day.\n\nNew story every weekday.\n\nOur videos are researched and scripted with AI tools, fact-checked and approved by a human before they go out, and narrated with a synthetic voice. Sources are listed in every description.\n\nBuilt with AI YouTube Studio (open source): https://github.com/dennis299/ai-youtube-studio",
+  "keywords": [
+    "business stories",
+    "company history",
+    "rise and fall",
+    "business documentary",
+    "why companies fail",
+    "startup stories",
+    "brand history",
+    "entrepreneurship",
+    "corporate history",
+    "business case study"
+  ],
+  "pillars": [
+    {
+      "name": "The Fall",
+      "why": "Giants that collapsed (Nokia, Blockbuster, Kodak, BlackBerry, Toys R Us). The most-searched format."
+    },
+    {
+      "name": "The Build",
+      "why": "Origin stories of brands people use every day (IKEA, Nintendo, Red Bull, Zara). Evergreen and brand-safe."
+    },
+    {
+      "name": "The Bet",
+      "why": "One decision that made or broke a company (Netflix killing DVDs, Apple's iPhone gamble)."
+    },
+    {
+      "name": "The Comeback",
+      "why": "Companies that broke and rebuilt (Lego, Marvel, Apple 1997). Under-served and great for retention."
+    }
+  ],
+  "logoBrief": "A single bold gold (#C9A227) ampersand on charcoal (#141414), split by a sharp diagonal crack. The left half is solid; the right half breaks into a few angular shards. No text. Reads at 48px inside the circle crop. Made in Canva.",
+  "bannerBrief": "2560×1440 charcoal background with a low-contrast skyline rising on the left and crumbling on the right. Large \"BUILT & BROKEN\" title with a crack through the ampersand, the tagline \"How empires are built, and how they fall.\", and \"New stories every weekday\". All text inside the 1546×423 safe area.",
+  "uploadDefaults": {
+    "categoryId": "27",
+    "tags": [
+      "business stories",
+      "company history",
+      "rise and fall",
+      "business documentary",
+      "built and broken"
+    ],
+    "footer": "Sources:\n{sources}\n\nBuilt & Broken: how empires are built, and how they fall.\nNew story every weekday. Subscribe so you don't miss one.\n\nMade with AI tools, reviewed by a human.\n\n#business #companyhistory #{topic_tag}"
+  }
+}

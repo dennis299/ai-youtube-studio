@@ -1,0 +1,366 @@
+{
+  "videoId": "2026-11-w1-1",
+  "titleOptions": [
+    "How Nokia Lost Everything in Six Years",
+    "Nokia Saw the iPhone Coming. It Was Too Scared to Stop It.",
+    "The Fear That Killed Nokia"
+  ],
+  "chosenTitle": "How Nokia Lost Everything in Six Years",
+  "hook": "In 2007, one of every two smartphones sold on Earth was a Nokia. Six years later, it sold its entire phone business for about half of what Apple made in a single month. Here's the part nobody tells you: Nokia saw the future coming. It had already built it. It was just too afraid to ship it.",
+  "beats": [
+    {
+      "heading": "Cold open: the king of phones",
+      "narration": "Half the world's smartphones, and a brand people trusted more than their banks."
+    },
+    {
+      "heading": "The rise: rubber boots to world domination",
+      "narration": "From a Finnish paper mill to the company that put a phone in a billion pockets."
+    },
+    {
+      "heading": "The warning: a touchscreen in 2004",
+      "narration": "Nokia engineers had a touchscreen, internet-ready phone years before the iPhone, and management shelved it."
+    },
+    {
+      "heading": "The fall: fear in the middle",
+      "narration": "Researchers later found a company where nobody dared tell the boss bad news."
+    },
+    {
+      "heading": "The burning platform",
+      "narration": "A new CEO, a famous memo, and a bet on Windows Phone that came too late."
+    },
+    {
+      "heading": "The lesson",
+      "narration": "Companies rarely die from not seeing the future. They die from being afraid to act on it."
+    }
+  ],
+  "scenes": [
+    {
+      "n": 1,
+      "narration": "In 2007, one of every two smartphones sold on Earth was a Nokia.",
+      "visual": "Black screen, then archive footage of crowded mid-2000s city streets with people holding Nokia phones. Kinetic text: 1 IN 2.",
+      "source": "archive",
+      "seconds": 6.5
+    },
+    {
+      "n": 2,
+      "narration": "Six years later, it sold its entire phone business for about half of what Apple made in a single month.",
+      "visual": "Motion graphic: Nokia logo shrinking next to an Apple revenue bar for one month of 2013.",
+      "source": "motion-graphics",
+      "seconds": 9
+    },
+    {
+      "n": 3,
+      "narration": "Here's the part nobody tells you. Nokia saw the future coming. It had already built it.",
+      "visual": "Slow push-in on a generic early prototype touchscreen device on a desk, dramatic side light.",
+      "source": "ai-image",
+      "seconds": 7.5
+    },
+    {
+      "n": 4,
+      "narration": "It was just too afraid to ship it. This is how the most powerful phone company in history broke.",
+      "visual": "A cracked phone screen in slow motion. Title card: BUILT & BROKEN, NOKIA.",
+      "source": "stock",
+      "seconds": 9
+    },
+    {
+      "n": 5,
+      "narration": "Nokia didn't start with phones. In 1865 it was a paper mill on a Finnish river, named after the town of Nokia.",
+      "visual": "Public-domain photos of 19th-century Finnish paper mills and the Nokianvirta river. Map pin on Finland.",
+      "source": "archive",
+      "seconds": 11
+    },
+    {
+      "n": 6,
+      "narration": "Over the next century it made rubber boots, car tyres and electrical cable. Then in the 1980s, it went all in on a strange new idea: phones you could carry.",
+      "visual": "Archive product shots: rubber boots, tyres, cables, then a 1980s brick mobile phone.",
+      "source": "archive",
+      "seconds": 14.5
+    },
+    {
+      "n": 7,
+      "narration": "The man who made that bet was Jorma Ollila, a former banker who became CEO in 1992 when Nokia was close to collapse. He sold off almost everything that wasn't telecom.",
+      "visual": "Archive-style photo montage of early-1990s Helsinki, a boardroom, and a stack of divisions being crossed out on a chart.",
+      "source": "archive",
+      "seconds": 13
+    },
+    {
+      "n": 8,
+      "narration": "Finland's timing was perfect. The Nordic countries had pioneered shared mobile networks, and Europe was agreeing on one digital standard, GSM, that let a phone work across borders.",
+      "visual": "Animated map of Europe lighting up country by country with GSM network coverage.",
+      "source": "motion-graphics",
+      "seconds": 14.5
+    },
+    {
+      "n": 9,
+      "narration": "By 1998, Nokia had become the biggest mobile phone maker in the world. It would hold that crown for well over a decade.",
+      "visual": "Animated line chart: Nokia market share climbing past Motorola in 1998.",
+      "source": "motion-graphics",
+      "seconds": 10
+    },
+    {
+      "n": 10,
+      "narration": "The phones were indestructible. The batteries lasted a week. The ringtone became the most-heard melody on the planet.",
+      "visual": "Stock footage of a sturdy 2000s handset dropped on concrete, then a phone ringing on a cafe table.",
+      "source": "stock",
+      "seconds": 10
+    },
+    {
+      "n": 11,
+      "narration": "Nokia sold phones for every pocket, from fifty-dollar handsets in India and Nigeria to luxury models in London. In emerging markets, Nokia simply was the mobile phone.",
+      "visual": "Stock footage of busy markets in Lagos and Mumbai with phone stalls; world map with sales hot spots.",
+      "source": "stock",
+      "seconds": 13
+    },
+    {
+      "n": 12,
+      "narration": "At its peak, the company was so big that it was responsible for roughly a quarter of Finland's exports.",
+      "visual": "Motion graphic: Finland export bar, with a quarter of it filled in Nokia blue.",
+      "source": "motion-graphics",
+      "seconds": 9
+    },
+    {
+      "n": 13,
+      "narration": "And Nokia didn't just sell basic phones. It practically invented the smartphone. Its Symbian software ran on the majority of smartphones sold in the mid-2000s.",
+      "visual": "Motion graphic: pie chart of 2007 smartphone operating systems, Symbian taking about half.",
+      "source": "motion-graphics",
+      "seconds": 13
+    },
+    {
+      "n": 14,
+      "narration": "Back in 1996, its Communicator could already send email, fax and browse a basic web. Nokia was building pocket computers before most people had heard the phrase.",
+      "visual": "Illustration of a 1990s clamshell business phone opened like a mini laptop on an airplane tray table.",
+      "source": "ai-image",
+      "seconds": 13
+    },
+    {
+      "n": 15,
+      "narration": "In 2007, Nokia's stock market value peaked at well over one hundred billion dollars. It was Europe's most valuable tech company.",
+      "visual": "Animated stock chart rising to a 2007 peak, with a gold glow on the high point.",
+      "source": "motion-graphics",
+      "seconds": 10
+    },
+    {
+      "n": 16,
+      "narration": "Then, in January 2007, Steve Jobs walked on stage and pulled out a phone with no keyboard.",
+      "visual": "Stock footage of a keynote stage and audience silhouettes (no Apple footage). Text: JANUARY 9, 2007.",
+      "source": "stock",
+      "seconds": 9
+    },
+    {
+      "n": 17,
+      "narration": "Here's the twist. Nokia's own engineers had shown management a touchscreen, internet-ready phone back in 2004, according to former employees who later spoke to the Wall Street Journal.",
+      "visual": "Illustrated mock-up of a 2004-era touchscreen prototype on a meeting table, executives' hands around it.",
+      "source": "ai-image",
+      "seconds": 14.5
+    },
+    {
+      "n": 18,
+      "narration": "Management passed. It looked expensive and risky, and Nokia was already winning. Why bet on something new?",
+      "visual": "Kinetic text over a dim boardroom: TOO EXPENSIVE. TOO RISKY. WE'RE WINNING.",
+      "source": "motion-graphics",
+      "seconds": 10
+    },
+    {
+      "n": 19,
+      "narration": "When the iPhone arrived, many Nokia leaders dismissed it. It was too pricey, the battery was weak, and it couldn't even send a picture message.",
+      "visual": "Split screen: spec comparison table of 2007 phones animating in, with Nokia ticking more boxes.",
+      "source": "motion-graphics",
+      "seconds": 12
+    },
+    {
+      "n": 20,
+      "narration": "On paper they were right. Nokia's phones had better cameras, better batteries and better networks. But customers weren't buying specs. They were buying how it felt to use.",
+      "visual": "Stock footage of hands swiping and pinching on a touchscreen, close-up, warm light.",
+      "source": "stock",
+      "seconds": 13
+    },
+    {
+      "n": 21,
+      "narration": "And there was a deeper problem. Nokia was a hardware company. It measured success in units shipped, factory costs and how tough a phone was. Software was something you bolted on at the end.",
+      "visual": "Factory assembly line footage, conveyor of phone shells; overlay labels: UNITS, COSTS, DURABILITY.",
+      "source": "stock",
+      "seconds": 14.5
+    },
+    {
+      "n": 22,
+      "narration": "Apple flipped that. The iPhone was software first, with hardware built around it. Nokia's culture was built for the opposite world.",
+      "visual": "Motion graphic: two stacked layers, HARDWARE and SOFTWARE, swapping places.",
+      "source": "motion-graphics",
+      "seconds": 10
+    },
+    {
+      "n": 23,
+      "narration": "So why couldn't a company with billions of dollars and thousands of brilliant engineers respond?",
+      "visual": "Slow aerial of a glass corporate campus in winter. Text: WHY?",
+      "source": "stock",
+      "seconds": 7.5
+    },
+    {
+      "n": 24,
+      "narration": "Years later, two researchers from INSEAD and Aalto University interviewed 76 Nokia managers and engineers. What they found wasn't stupidity. It was fear.",
+      "visual": "Motion graphic: a stack of interview transcripts with the word FEAR highlighted.",
+      "source": "motion-graphics",
+      "seconds": 12
+    },
+    {
+      "n": 25,
+      "narration": "Top executives were known for their temper. Middle managers learned that bad news could cost them their jobs, so they told leaders what they wanted to hear.",
+      "visual": "Silhouettes in a corridor, a door closing on a meeting room. Muted colour grade.",
+      "source": "stock",
+      "seconds": 12
+    },
+    {
+      "n": 26,
+      "narration": "Engineers knew Symbian was ageing and painful to build for. Leadership kept hearing that the next version would be ready soon.",
+      "visual": "Animated timeline of promised software release dates sliding later and later.",
+      "source": "motion-graphics",
+      "seconds": 10
+    },
+    {
+      "n": 27,
+      "narration": "Meanwhile, Apple's App Store and Google's free Android were pulling developers away. Phones were becoming computers, and computers live or die on software.",
+      "visual": "Motion graphic: app icons flowing from a Nokia phone into two rival app stores.",
+      "source": "motion-graphics",
+      "seconds": 12
+    },
+    {
+      "n": 28,
+      "narration": "Nokia did try to build an answer. It launched Ovi, its own app and music store, and started a new operating system called MeeGo.",
+      "visual": "Generic illustrated app store grid on an older phone screen, with a progress bar stuck at sixty percent.",
+      "source": "ai-image",
+      "seconds": 10
+    },
+    {
+      "n": 29,
+      "narration": "But different teams fought over which software would win, and projects were reorganised again and again. Inside the company, people called it a war of platforms.",
+      "visual": "Animated org chart with boxes rearranging repeatedly and arrows pointing at each other.",
+      "source": "motion-graphics",
+      "seconds": 12
+    },
+    {
+      "n": 30,
+      "narration": "By 2010, Nokia's smartphone share was collapsing, and the board hired a new CEO from Microsoft, Stephen Elop.",
+      "visual": "Chart: Symbian market share falling 2008 to 2010. Text card: NEW CEO, 2010.",
+      "source": "motion-graphics",
+      "seconds": 10
+    },
+    {
+      "n": 31,
+      "narration": "In February 2011 he sent staff a memo that leaked to the world. Nokia, he wrote, was standing on a burning platform.",
+      "visual": "Typewriter-style animated text of the phrase BURNING PLATFORM over an offshore oil rig at night.",
+      "source": "stock",
+      "seconds": 11
+    },
+    {
+      "n": 32,
+      "narration": "His answer was to abandon Nokia's own software and bet everything on Microsoft's Windows Phone.",
+      "visual": "Motion graphic: Nokia logo jumping from one platform to another as the old one burns.",
+      "source": "motion-graphics",
+      "seconds": 9
+    },
+    {
+      "n": 33,
+      "narration": "The memo was brutally honest, and it also had a side effect. Telling the world your current phones are on fire is not great for selling them. Symbian sales fell off a cliff.",
+      "visual": "Chart: Symbian sales dropping sharply in 2011 right after a memo icon appears on the timeline.",
+      "source": "motion-graphics",
+      "seconds": 13
+    },
+    {
+      "n": 34,
+      "narration": "The cruel irony came months later. Nokia released the N9 on MeeGo, a phone critics loved, and then barely sold it, because the company had already committed to Windows.",
+      "visual": "Illustrated sleek 2011 smartphone in a glass display with a rope barrier in front of it.",
+      "source": "ai-image",
+      "seconds": 13
+    },
+    {
+      "n": 35,
+      "narration": "The Lumia phones that followed were well made and colourful. But Windows Phone had a fraction of the apps people wanted, and shoppers walked past them to buy iPhones and Android phones.",
+      "visual": "Stock footage of a phone shop, customers picking up other phones while one bright display table sits untouched.",
+      "source": "stock",
+      "seconds": 13
+    },
+    {
+      "n": 36,
+      "narration": "It was too late. Developers didn't follow, customers didn't switch, and sales kept falling.",
+      "visual": "Empty shop shelf with dust, slow dolly. Falling bar chart overlay.",
+      "source": "stock",
+      "seconds": 9
+    },
+    {
+      "n": 37,
+      "narration": "In September 2013, Microsoft agreed to buy Nokia's phone business for about 5.4 billion euros, roughly seven billion dollars.",
+      "visual": "Animated headline card: DEAL ANNOUNCED, €5.44B, with the date.",
+      "source": "motion-graphics",
+      "seconds": 10
+    },
+    {
+      "n": 38,
+      "narration": "Two years later Microsoft wrote most of that value off. The phones that once ruled the world quietly disappeared from shops.",
+      "visual": "Old handsets in a recycling bin, slow motion. Text: WRITTEN OFF.",
+      "source": "stock",
+      "seconds": 10
+    },
+    {
+      "n": 39,
+      "narration": "From the 2007 peak, Nokia's market value had fallen by roughly ninety percent. Tens of thousands of jobs disappeared, many of them in Finland.",
+      "visual": "Stock chart falling from the 2007 peak to 2012, then quiet footage of a snowy, empty Finnish office park.",
+      "source": "motion-graphics",
+      "seconds": 12
+    },
+    {
+      "n": 40,
+      "narration": "But here's what surprises people. Nokia didn't die. It went back to what it knew, networks, and today builds the equipment that carries mobile data around the world.",
+      "visual": "Stock footage of 5G cell towers at golden hour, network lines animating between cities.",
+      "source": "stock",
+      "seconds": 13
+    },
+    {
+      "n": 41,
+      "narration": "The phone giant was gone, though, and the reason is a warning for every successful company.",
+      "visual": "Slow fade over a lone vintage Nokia handset on a table.",
+      "source": "ai-image",
+      "seconds": 7.5
+    },
+    {
+      "n": 42,
+      "narration": "Look at the timeline again. A touchscreen prototype in 2004. Smartphone software leadership in 2007. A critically loved phone in 2011. At every step, Nokia had the pieces.",
+      "visual": "Animated timeline revisiting each milestone, each one lighting gold then dimming.",
+      "source": "motion-graphics",
+      "seconds": 13
+    },
+    {
+      "n": 43,
+      "narration": "Nokia didn't lose because it couldn't see the future. It had built the future in its own labs.",
+      "visual": "Callback: the prototype illustration from scene 12, now behind glass like a museum piece.",
+      "source": "ai-image",
+      "seconds": 9
+    },
+    {
+      "n": 44,
+      "narration": "It lost because the people who saw it were too afraid to say so, and the people in charge were too comfortable to listen.",
+      "visual": "Kinetic text: TOO AFRAID TO SAY. TOO COMFORTABLE TO LISTEN.",
+      "source": "motion-graphics",
+      "seconds": 11
+    }
+  ],
+  "outro": "Next on Built & Broken: Kodak invented the digital camera in 1975, then told the inventor to keep quiet. Subscribe so you don't miss how that story ends.",
+  "thumbnailConcepts": [
+    "A classic Nokia brick phone cracked in half, gold crack glowing, text: \"THEY SAW IT\"",
+    "A Nokia phone on a burning platform, text: \"$0\"",
+    "Split image: 2007 crown vs 2013 rubble, text: \"6 YEARS\""
+  ],
+  "shortSegment": {
+    "startScene": 16,
+    "endScene": 20,
+    "hookLine": "Nokia had a touchscreen phone in 2004"
+  },
+  "sources": [
+    "https://knowledge.insead.edu/strategy/who-killed-nokia-nokia-did",
+    "https://journals.sagepub.com/doi/10.1177/0001839215606951",
+    "https://www.wsj.com/articles/SB10001424052702304388004577531002591315494",
+    "https://news.microsoft.com/2013/09/03/microsoft-to-acquire-nokias-devices-services-business-license-nokias-patents-and-mapping-services/",
+    "https://www.engadget.com/2011-02-08-nokia-ceo-stephen-elop-rallies-troops-in-brutally-honest-burnin.html",
+    "https://en.wikipedia.org/wiki/Nokia"
+  ],
+  "aiDisclosure": false
+}

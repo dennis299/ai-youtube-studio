@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { syncJobs } from "@/lib/sync";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { LinkButton } from "@/components/link-button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -11,6 +12,7 @@ import { loadSettings } from "@/lib/settings";
 export const dynamic = "force-dynamic";
 
 export default async function Dashboard() {
+  await syncJobs();
   const [channels, jobs, settings] = await Promise.all([listChannels(), listJobs(), loadSettings()]);
   const pending = jobs.filter((j) => j.status === "pending" || j.status === "in_progress").length;
   const counts = await Promise.all(channels.map(async (c) => {

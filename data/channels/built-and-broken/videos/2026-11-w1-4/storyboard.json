@@ -1,0 +1,309 @@
+{
+  "videoId": "2026-11-w1-4",
+  "titleOptions": [
+    "LEGO Was Weeks From Bankruptcy",
+    "How LEGO Almost Died in 2003",
+    "The Outsider Who Saved LEGO"
+  ],
+  "chosenTitle": "LEGO Was Weeks From Bankruptcy",
+  "hook": "In 2003, LEGO, the most beloved toy brand on Earth, was losing money so fast that insiders feared it could run out of cash. The company had theme parks, clothing, video games and TV shows. What it had forgotten was how to make money from a simple plastic brick.",
+  "beats": [
+    {
+      "heading": "Cold open: the crisis",
+      "narration": "A beloved brand bleeding cash."
+    },
+    {
+      "heading": "A carpenter's toy",
+      "narration": "From wooden ducks in a Danish village to the patented brick."
+    },
+    {
+      "heading": "The innovation trap",
+      "narration": "Everyone told LEGO to innovate, so it did everything at once."
+    },
+    {
+      "heading": "The outsider",
+      "narration": "A 35-year-old former consultant becomes CEO and cuts back to the core."
+    },
+    {
+      "heading": "The rebuild",
+      "narration": "Fewer pieces, listening to adult fans, and licensing done right."
+    },
+    {
+      "heading": "The lesson",
+      "narration": "Innovation without focus nearly killed LEGO. Focus brought it back."
+    }
+  ],
+  "scenes": [
+    {
+      "n": 1,
+      "narration": "In 2003, LEGO was in serious trouble.",
+      "visual": "Close-up of a single LEGO-style brick (generic, no logo) falling in slow motion onto a dark table.",
+      "source": "stock",
+      "seconds": 4
+    },
+    {
+      "n": 2,
+      "narration": "Sales dropped by about a quarter in one year. The company was losing money so fast that insiders feared it could run out of cash.",
+      "visual": "Animated red bar chart collapsing; a cash gauge needle falling toward empty.",
+      "source": "motion-graphics",
+      "seconds": 12
+    },
+    {
+      "n": 3,
+      "narration": "LEGO had theme parks, clothing lines, video games and TV shows. What it had forgotten was how to make money from a simple plastic brick.",
+      "visual": "Montage of generic theme park rides, clothing racks and a game controller, each cracking like a brick.",
+      "source": "stock",
+      "seconds": 12
+    },
+    {
+      "n": 4,
+      "narration": "This is how LEGO nearly broke itself trying to be everything, and how it came back to become the biggest toy company in the world.",
+      "visual": "Title card: BUILT & BROKEN, LEGO, over a scattered pile of colourful generic bricks.",
+      "source": "stock",
+      "seconds": 12
+    },
+    {
+      "n": 5,
+      "narration": "The story starts in 1932 in Billund, a small village in Denmark, with a carpenter named Ole Kirk Christiansen.",
+      "visual": "Map zoom into Billund, Denmark; illustrated 1930s carpenter's workshop with wood shavings.",
+      "source": "ai-image",
+      "seconds": 9.5
+    },
+    {
+      "n": 6,
+      "narration": "During the Great Depression, there wasn't much demand for furniture, so he started making wooden toys: yo-yos, pull-along ducks, trucks.",
+      "visual": "Illustration of wooden toy ducks and trucks on a workbench, warm lamp light.",
+      "source": "ai-image",
+      "seconds": 9.5
+    },
+    {
+      "n": 7,
+      "narration": "He named the company after two Danish words, leg godt, meaning play well.",
+      "visual": "Kinetic text: LEG GODT, PLAY WELL, letters snapping together like bricks.",
+      "source": "motion-graphics",
+      "seconds": 6.5
+    },
+    {
+      "n": 8,
+      "narration": "In 1949, LEGO began making plastic bricks. They were clever, but they didn't hold together very well.",
+      "visual": "Animated simple bricks stacking then toppling.",
+      "source": "motion-graphics",
+      "seconds": 8.5
+    },
+    {
+      "n": 9,
+      "narration": "The breakthrough came in 1958, with the patented stud-and-tube design. The tubes underneath gripped the studs on top, so bricks clicked firmly together and stayed there.",
+      "visual": "Technical animated cross-section of a generic brick: studs on top, tubes underneath, clicking together.",
+      "source": "motion-graphics",
+      "seconds": 12.5
+    },
+    {
+      "n": 10,
+      "narration": "Better still, every brick fit every other brick, from any set, from any year. That compatibility became LEGO's superpower.",
+      "visual": "Bricks of many colours and eras clicking into one structure.",
+      "source": "motion-graphics",
+      "seconds": 9.5
+    },
+    {
+      "n": 11,
+      "narration": "For decades, the system just grew: town sets, space sets, castles, and the minifigure in 1978.",
+      "visual": "Illustrated timeline with icons for town, space, castle and a little generic figure.",
+      "source": "motion-graphics",
+      "seconds": 8
+    },
+    {
+      "n": 12,
+      "narration": "By the 1990s, though, something changed. Kids had video games. Consultants warned that the brick was old-fashioned and that LEGO had to innovate or die.",
+      "visual": "Stock footage of a 1990s kid playing a video game in a dark room; a brick box gathering dust.",
+      "source": "stock",
+      "seconds": 12
+    },
+    {
+      "n": 13,
+      "narration": "And LEGO's basic patent had expired, so competitors could now make compatible bricks, often for less.",
+      "visual": "Motion graphic: a patent seal cracking; lookalike bricks flooding in from the sides.",
+      "source": "motion-graphics",
+      "seconds": 8
+    },
+    {
+      "n": 14,
+      "narration": "So LEGO innovated. Everywhere. All at once.",
+      "visual": "Kinetic text: EVERYWHERE. ALL AT ONCE.",
+      "source": "motion-graphics",
+      "seconds": 4
+    },
+    {
+      "n": 15,
+      "narration": "It built more theme parks. It launched clothing, watches, books, TV shows and video games. It created new product lines with entirely new kinds of pieces.",
+      "visual": "Explosion of product icons radiating out from a single brick.",
+      "source": "motion-graphics",
+      "seconds": 12.5
+    },
+    {
+      "n": 16,
+      "narration": "The number of unique pieces exploded. By the early 2000s, LEGO was producing a vast catalogue of different elements, many of them used in just a single set.",
+      "visual": "Animated counter of unique part types climbing; a warehouse shelf overflowing with bins.",
+      "source": "motion-graphics",
+      "seconds": 13
+    },
+    {
+      "n": 17,
+      "narration": "Every new piece needs a new mould, and a mould is expensive. Complexity was quietly eating the profits.",
+      "visual": "Stock footage of an industrial injection-moulding machine; price tags piling up on each mould.",
+      "source": "stock",
+      "seconds": 9
+    },
+    {
+      "n": 18,
+      "narration": "Some products sold brilliantly, especially LEGO Star Wars, launched in 1999. But big movie years were followed by empty years, and the results swung wildly.",
+      "visual": "Line chart swinging up and down in sharp peaks and valleys.",
+      "source": "motion-graphics",
+      "seconds": 12
+    },
+    {
+      "n": 19,
+      "narration": "Then came 2003. Sales collapsed. In 2004, LEGO reported a huge loss. The family-owned company was in real danger.",
+      "visual": "Kinetic headline: 2004 LOSS, over a dim Danish factory exterior at dusk.",
+      "source": "stock",
+      "seconds": 9.5
+    },
+    {
+      "n": 20,
+      "narration": "Kjeld Kirk Kristiansen, the founder's grandson, made a radical choice. He handed the company to an outsider.",
+      "visual": "Illustrated silhouette of an older man handing a single brick to a younger man.",
+      "source": "ai-image",
+      "seconds": 8.5
+    },
+    {
+      "n": 21,
+      "narration": "Jørgen Vig Knudstorp was a 35-year-old former McKinsey consultant who had joined LEGO only a few years earlier. In 2004, he became CEO.",
+      "visual": "Kinetic text card: NEW CEO, AGE 35, over a modern office corridor.",
+      "source": "motion-graphics",
+      "seconds": 11
+    },
+    {
+      "n": 22,
+      "narration": "His first job wasn't growth. It was survival. He talked about a burning platform, a company that had to stop the bleeding before it could think about the future.",
+      "visual": "Animated cash-flow line flattening out of a dive; bandage icon over a brick.",
+      "source": "motion-graphics",
+      "seconds": 13.5
+    },
+    {
+      "n": 23,
+      "narration": "LEGO sold a majority of its Legoland theme parks in 2005 to the Blackstone Group, the private equity firm behind Merlin Entertainments.",
+      "visual": "Generic amusement park rides; motion graphic of a park icon moving to another owner.",
+      "source": "stock",
+      "seconds": 10.5
+    },
+    {
+      "n": 24,
+      "narration": "It cut product lines, reduced the number of unique pieces dramatically, and asked a simple question about every set: can we make money on this?",
+      "visual": "Animated part counter dropping sharply; bins disappearing from shelves.",
+      "source": "motion-graphics",
+      "seconds": 12
+    },
+    {
+      "n": 25,
+      "narration": "Then it went back to the core. Bricks, building, and the play experience that made LEGO special in the first place.",
+      "visual": "Hands building with generic bricks on a wooden floor, soft daylight.",
+      "source": "stock",
+      "seconds": 10
+    },
+    {
+      "n": 26,
+      "narration": "LEGO also started listening to a group it had ignored for years: adult fans, who spent heavily and knew exactly what they wanted.",
+      "visual": "Stock footage of adults at a hobby convention admiring large brick models.",
+      "source": "stock",
+      "seconds": 11
+    },
+    {
+      "n": 27,
+      "narration": "Ideas from fans became official sets. Detailed models for adults became a whole new market.",
+      "visual": "Animated flow: a fan sketch turning into a boxed set on a shelf.",
+      "source": "motion-graphics",
+      "seconds": 7.5
+    },
+    {
+      "n": 28,
+      "narration": "Licensing was done differently too. Instead of chasing hits, LEGO built long-running themes it controlled, alongside partners like Star Wars and Harry Potter.",
+      "visual": "Motion graphic: generic theme icons arranged in a stable grid rather than spiking chart bars.",
+      "source": "motion-graphics",
+      "seconds": 11
+    },
+    {
+      "n": 29,
+      "narration": "The turnaround was dramatic. Within a few years, LEGO was profitable again and growing faster than the rest of the toy industry.",
+      "visual": "Green line chart climbing steadily from 2005 to 2012.",
+      "source": "motion-graphics",
+      "seconds": 10.5
+    },
+    {
+      "n": 30,
+      "narration": "In 2014, The LEGO Movie became a worldwide hit. Pieces of the company that had nearly broken now came together in a two-hour celebration of the brick.",
+      "visual": "Stock footage of a cinema audience laughing; bricks assembling into a film reel shape.",
+      "source": "stock",
+      "seconds": 12.5
+    },
+    {
+      "n": 31,
+      "narration": "That same year, LEGO passed Mattel to become the world's biggest toy company by sales.",
+      "visual": "Two bars racing; the LEGO-coloured bar overtakes. Text: NUMBER ONE.",
+      "source": "motion-graphics",
+      "seconds": 7.5
+    },
+    {
+      "n": 32,
+      "narration": "So what actually happened here? LEGO didn't fail because it stopped innovating. It failed because it innovated in every direction at the same time.",
+      "visual": "Arrows shooting outward in every direction from a brick, then fading.",
+      "source": "motion-graphics",
+      "seconds": 11.5
+    },
+    {
+      "n": 33,
+      "narration": "Every theme park, video game and special piece seemed like a good idea on its own. Together, they buried the thing customers actually loved.",
+      "visual": "A single brick slowly buried under a pile of product icons.",
+      "source": "motion-graphics",
+      "seconds": 11.5
+    },
+    {
+      "n": 34,
+      "narration": "The comeback wasn't about a single genius product. It was about saying no. Fewer pieces, fewer distractions, and a clear answer to what LEGO is for.",
+      "visual": "Kinetic text: SAY NO. Then the pile clears, leaving one gold-lit brick.",
+      "source": "motion-graphics",
+      "seconds": 12.5
+    },
+    {
+      "n": 35,
+      "narration": "Today, the same bricks from 1958 still click into the ones made this morning. That compatibility was the secret all along.",
+      "visual": "Old faded brick clicking onto a brand new one, extreme close-up.",
+      "source": "stock",
+      "seconds": 10
+    },
+    {
+      "n": 36,
+      "narration": "LEGO nearly broke by forgetting what it was. It was rebuilt the same way it was first built: one brick at a time.",
+      "visual": "Final timelapse of a model being built brick by brick, camera pulling back.",
+      "source": "stock",
+      "seconds": 11
+    }
+  ],
+  "outro": "Next on Built & Broken: Kodak invented the digital camera in 1975, and then it asked the inventor to keep quiet. Subscribe so you don't miss how that story ends.",
+  "thumbnailConcepts": [
+    "A single toy brick cracked in half with gold light inside, text: \"ALMOST DEAD\"",
+    "A pile of bricks with a red bankruptcy stamp, text: \"2003\"",
+    "A child's hand holding one brick against a dark background, text: \"SAVED BY THIS\""
+  ],
+  "shortSegment": {
+    "startScene": 14,
+    "endScene": 19,
+    "hookLine": "LEGO nearly died by innovating too much"
+  },
+  "sources": [
+    "https://www.lego.com/en-us/aboutus/lego-group/the-lego-group-history",
+    "https://knowledge.wharton.upenn.edu/article/innovation-almost-bankrupted-lego-until-it-rebuilt-with-a-better-blueprint/",
+    "https://en.wikipedia.org/wiki/The_Lego_Group",
+    "https://www.bbc.com/news/business-29516468",
+    "Robertson, D. (2013). Brick by Brick: How LEGO Rewrote the Rules of Innovation. Crown Business."
+  ],
+  "aiDisclosure": false
+}

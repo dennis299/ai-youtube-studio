@@ -1,4 +1,5 @@
 import { existsSync } from "node:fs";
+import { syncJobs } from "@/lib/sync";
 import path from "node:path";
 import { ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -15,6 +16,7 @@ import { pendingJobs } from "@/lib/pending";
 import { getChannel, getKit } from "@/lib/store";
 
 export default async function KitPage(props: PageProps<"/channels/[slug]/kit">) {
+  await syncJobs();
   const { slug } = await props.params;
   const [channel, kit, jobs] = await Promise.all([getChannel(slug), getKit(slug), pendingJobs(slug, ["channel_kit"])]);
   if (!channel) return null;
