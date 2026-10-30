@@ -49,3 +49,5 @@ next-env.d.ts
 /jobs/
 /output/
 /.superpowers/
+/public/channels/*
+!/public/channels/built-and-broken/

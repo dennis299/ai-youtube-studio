@@ -1,0 +1,27 @@
+{
+  "slug": "built-and-broken",
+  "name": "Built & Broken",
+  "niche": "Business stories: how famous companies were built and how they broke",
+  "style": "Cinematic documentary narration, archive footage, maps and charts",
+  "audience": "Curious adults 18–45 who like business, history and entrepreneurship",
+  "language": "en",
+  "cadence": {
+    "perWeek": 5,
+    "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "videoMinutes": [
+    8,
+    10
+  ],
+  "budgetPerVideoUsd": 5,
+  "pipeline": "documentary-montage",
+  "publishMode": "studio-kit",
+  "stage": "kit",
+  "createdAt": "2026-10-30T12:43:52.479Z"
+}

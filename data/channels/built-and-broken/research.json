@@ -1,0 +1,38 @@
+{
+  "queries": [
+    "rise and fall of company",
+    "why did nokia fail",
+    "business documentary",
+    "how ikea became huge"
+  ],
+  "topVideos": [],
+  "patterns": [
+    "Title formulas dominate: \"The Rise and Fall of X\", \"How X Lost Everything\", \"Why X Is Failing\", \"The Untold Story of X\", \"How X Became a $___ Empire\".",
+    "Cold opens start at the most dramatic moment (the collapse, the lawsuit, the billion-dollar mistake), then rewind: \"To understand how, we need to go back to 1987…\".",
+    "Winners run 10–25 minutes. Mid-length (8–14 min) versions of big stories outperform their channel average because they get to the point that longer channels pad out.",
+    "Visuals are archive photos and news clips, logo and product shots, simple animated maps, stock-price and revenue charts, and kinetic text. Almost nobody shows a face.",
+    "Thumbnails: one recognisable logo or product, 1–3 words max (\"BANKRUPT\", \"$0\", \"IT'S OVER\"), a red arrow or crack, high contrast on a dark background.",
+    "The human angle wins. Videos built around one founder's bet or one fatal decision get more comments than pure corporate timelines.",
+    "Consistent series branding (same intro sting, same chapter cards) builds binge sessions. Top channels link the next story in the outro.",
+    "Evergreen giants (Blockbuster, Nokia, Kodak, Toys R Us) are saturated with versions from big channels. New angles or lesser-known giants are the gap."
+  ],
+  "pillars": [
+    {
+      "name": "The Fall",
+      "why": "Collapse stories (rise and fall, bankruptcy, scandal) are the most-searched format in the niche and drive the highest views per sub."
+    },
+    {
+      "name": "The Build",
+      "why": "Origin stories of brands people use every day (IKEA, Zara, Red Bull, Nintendo) bring evergreen search traffic and are brand-safe for advertisers, which means higher RPM."
+    },
+    {
+      "name": "The Bet",
+      "why": "One decision that made or broke a company (Netflix killing DVDs, Apple betting on the iPhone). A tight 8–10 minute story with a clear tension arc."
+    },
+    {
+      "name": "The Comeback",
+      "why": "Companies that broke and rebuilt (Lego 2004, Marvel 1996, Apple 1997). Uplifting, under-served compared with collapse stories, and strong for retention."
+    }
+  ],
+  "summary": "No YouTube API data is attached yet (the channel is not connected), so this is based on web research and a review of the leading business-story channels (Company Man, MagnatesMedia, Modern MBA, ColdFusion, Logically Answered).\n\nWhat works: narrated documentary storytelling about famous companies, told as a drama with a cold open at the moment of crisis. The audience is curious adults, and advertisers pay well for them. Public estimates put business and education RPM around $6–15, versus $2–4 for anime or gaming. Titles follow a few proven formulas (Rise and Fall, How X Lost Everything, Why X Is Failing), and thumbnails are one logo plus one or two shocking words.\n\nWhat is saturated: the obvious US collapses (Blockbuster, Toys R Us, Sears) have dozens of versions with millions of views. Competing head-on needs a fresh angle (\"the one decision that killed Blockbuster\") rather than another full timeline.\n\nThe gap for Built & Broken: (1) tight 8–10 minute stories where competitors run 25, (2) non-US giants and recent collapses that have fewer versions (Nokia, Wirecard, Evergrande, Kodak inventing the digital camera), (3) the under-served Comeback and Bet formats, and (4) a strong series identity so viewers binge. Connect the YouTube channel to replace this with real view and views-per-subscriber data."
+}

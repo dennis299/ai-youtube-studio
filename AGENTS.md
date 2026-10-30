@@ -18,6 +18,9 @@ When asked to "process pending jobs":
    4. Delete `jobs/pending/<id>.json` and `jobs/pending/<id>.md`.
    5. If you cannot finish, write `jobs/done/<id>.json` with `"status": "failed"` and an
       `"error"` that says what the human needs to fix.
+
+   Shortcut for steps 3–5: save your output object to a file and run
+   `npm run job:complete -- <id> path/to/output.json` (or `npm run job:complete -- <id> --fail "reason"`).
 3. Tell the user to click **Check for results** in the app (or the app picks results up on
    the next page load). The app validates your output, and invalid output is shown as a
    failed job with the validation error, so they can ask you to redo it.
