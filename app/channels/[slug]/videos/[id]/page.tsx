@@ -87,7 +87,7 @@ export default async function VideoPage(props: PageProps<"/channels/[slug]/video
                   <div className="space-y-1.5"><Label>Hook (first 15 seconds)</Label><Textarea name="hook" defaultValue={sb.hook} /></div>
                   <div className="space-y-3">
                     {sb.scenes.map((s) => (
-                      <div key={s.n} className="grid gap-2 rounded-lg border p-3 md:grid-cols-[48px_1fr_1fr_72px]">
+                      <div key={s.n} className="grid gap-2 rounded-lg border p-3 md:grid-cols-[110px_1fr_1fr_72px]">
                         <div className="text-xs text-muted-foreground">#{s.n}<br /><Badge variant="secondary" className="mt-1">{s.source}</Badge></div>
                         <Textarea name={`scene_${s.n}_narration`} defaultValue={s.narration} className="min-h-20 text-xs" />
                         <Textarea name={`scene_${s.n}_visual`} defaultValue={s.visual} className="min-h-20 text-xs text-muted-foreground" />
