@@ -330,5 +330,15 @@
     "https://en.wikipedia.org/wiki/Ingvar_Kamprad",
     "https://www.bbc.com/news/world-europe-42838064"
   ],
-  "aiDisclosure": false
+  "aiDisclosure": false,
+  "approval": {
+    "hash": "d06f2d316ae3e0305b5bd2d95e8610855f2097c07c58cad8e15b5af718af64cc",
+    "at": "2026-10-30T19:35:12.261Z",
+    "checklist": {
+      "original": true,
+      "visualsClean": true,
+      "disclosureSet": true,
+      "factsChecked": true
+    }
+  }
 }

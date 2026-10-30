@@ -154,6 +154,17 @@ export const StatsSchema = z.object({
 });
 export type Stats = z.infer<typeof StatsSchema>;
 
+/** Channel-wide numbers for the Stats page and the YouTube Partner Program tracker. */
+export const ChannelOverviewSchema = z.object({
+  fetchedAt: z.string(),
+  subscribers: z.number(),
+  totalViews: z.number(),
+  videoCount: z.number(),
+  longFormHours12m: z.number().describe("Long-form + live watch hours, last 365 days (Shorts excluded, as YPP counts them)"),
+  shortsViews90d: z.number().describe("Shorts views, last 90 days"),
+});
+export type ChannelOverview = z.infer<typeof ChannelOverviewSchema>;
+
 export const InsightsSchema = z.object({
   winners: z.array(z.string()),
   losers: z.array(z.string()),

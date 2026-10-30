@@ -24,7 +24,7 @@ export default async function SettingsPage(props: PageProps<"/settings">) {
   return (
     <div className="mx-auto max-w-3xl space-y-6">
       <header className="space-y-2">
-        <h1 className="text-3xl font-semibold tracking-tight">Settings</h1>
+        <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">Settings</h1>
         <p className="text-muted-foreground">Everything here is stored locally in <code>data/settings.json</code>, which is gitignored.</p>
       </header>
       <Flash searchParams={props.searchParams} />

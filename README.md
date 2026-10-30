@@ -65,7 +65,7 @@ Clone the repo and run it, and you'll see the channel in the sidebar.
 | 6. Check-in | **Weekly check-in** | You review the week's 5 videos and tick 4 checks per video (original angle, clean visuals, disclosure, facts) to approve. |
 | 7. Produce | **Video page** | Sends the approved storyboard to OpenMontage as a production job. The app then cuts a 1080×1920 Short with ffmpeg (blurred background, captions). |
 | 8. Publish | **Video page** | Builds a **Studio upload kit** (files plus copy-paste metadata), or uploads through the API with scheduled `publishAt` once your Google project is audited. |
-| 9. Learn | **Stats** | Views, likes, comments and average view duration. One click has the AI write winners, losers and guidance, which feed the next monthly plan. |
+| 9. Learn | **Stats** | Subscribers, total views, and a **road-to-monetization** tracker (1,000 subs + 4,000 long-form watch hours, or 10M Shorts views), plus views, likes, comments and average view duration per video. One click has the AI write winners, losers and guidance, which feed the next monthly plan. |
 
 <table>
 <tr>
@@ -219,7 +219,7 @@ lib/
   tasks/             research · channel kit · monthly plan · storyboard · produce · insights
   ai/                API mode (OpenAI, Anthropic)
   jobs.ts            agent job queue (jobs/pending → jobs/done → jobs/archive)
-  youtube/           OAuth, research, quota, upload, stats
+  youtube/           OAuth, research, quota, upload, stats, channel overview
   checkin.ts         approval rules (content-hash bound)
   media/short.ts     ffmpeg 9:16 Short
   publish/kit.ts     Studio upload kit
@@ -230,7 +230,7 @@ tests/               vitest
 ```
 
 ```bash
-npm test         # 55 tests: store, jobs, tasks, quota, schedule, check-in, Shorts, upload kit, review fixes
+npm test         # 60 tests: store, jobs, tasks, quota, schedule, check-in, Shorts, upload kit, channel overview, review fixes
 npm run build
 ```
 

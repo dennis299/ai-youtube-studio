@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ScrollRow } from "@/components/scroll-row";
 import { syncJobs } from "@/lib/sync";
 import { CircleCheck } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -50,11 +51,18 @@ export default async function CheckinPage(props: PageProps<"/channels/[slug]/che
                 {approvedCount} of {videos.length} approved. Nothing gets produced or published until you approve it here.
               </p>
             </div>
-            <div className="flex flex-wrap gap-2 text-sm">
+            <ScrollRow className="relative w-full rounded-lg bg-muted/50 p-1 text-sm sm:w-auto">
               {weeks.map((w) => (
-                <Link key={w} href={`?week=${w}`} className={`rounded px-2 py-1 ${w === week ? "bg-muted" : "text-muted-foreground"}`}>{w}</Link>
+                <Link
+                  key={w}
+                  href={`?week=${w}`}
+                  aria-current={w === week ? "page" : undefined}
+                  className={`rounded-md px-3 py-1.5 transition-colors ${w === week ? "bg-background font-medium text-foreground shadow-sm ring-1 ring-border" : "text-muted-foreground hover:text-foreground"}`}
+                >
+                  Week {w.split("-w")[1]}
+                </Link>
               ))}
-            </div>
+            </ScrollRow>
           </div>
 
           <WaitingForAgent jobs={jobs} back={back} />

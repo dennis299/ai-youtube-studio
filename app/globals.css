@@ -123,8 +123,44 @@
   }
   body {
     @apply bg-background text-foreground;
+    /* One soft warm glow behind the top of the page; fixed so it doesn't scroll away. */
+    background-image:
+      radial-gradient(60rem 28rem at 70% -8rem, color-mix(in oklch, var(--primary) 9%, transparent), transparent 70%),
+      radial-gradient(40rem 24rem at -10% 110%, color-mix(in oklch, var(--primary) 4%, transparent), transparent 70%);
+    background-attachment: fixed;
   }
   html {
     @apply font-sans;
+    -webkit-tap-highlight-color: transparent;
+  }
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+  ::selection {
+    background: color-mix(in oklch, var(--primary) 35%, transparent);
+  }
+}
+
+@layer utilities {
+  /* Horizontal tab rows that scroll on narrow screens instead of wrapping. */
+  .scroll-row {
+    display: flex;
+    gap: 0.25rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    mask-image: linear-gradient(to right, black calc(100% - 1.5rem), transparent);
+  }
+  .scroll-row::-webkit-scrollbar {
+    display: none;
+  }
+  .scroll-row > * {
+    flex-shrink: 0;
+  }
+}
+
+@media (min-width: 640px) {
+  .scroll-row {
+    mask-image: none;
   }
 }

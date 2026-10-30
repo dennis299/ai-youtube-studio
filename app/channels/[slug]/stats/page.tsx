@@ -9,15 +9,17 @@ import { WaitingForAgent } from "@/components/waiting-for-agent";
 import { fetchStatsAction, insightsAction } from "@/app/actions";
 import { pendingJobs } from "@/lib/pending";
 import { loadSettings } from "@/lib/settings";
-import { getChannel, getInsights, listStats, listVideos } from "@/lib/store";
+import { getChannel, getInsights, getOverview, listStats, listVideos } from "@/lib/store";
+import { yppProgress } from "@/lib/youtube/overview";
+import { ExternalLink } from "lucide-react";
 
 const n = new Intl.NumberFormat("en");
 
 export default async function StatsPage(props: PageProps<"/channels/[slug]/stats">) {
   await syncJobs();
   const { slug } = await props.params;
-  const [channel, stats, videos, insights, jobs, settings] = await Promise.all([
-    getChannel(slug), listStats(slug), listVideos(slug), getInsights(slug), pendingJobs(slug, ["insights"]), loadSettings(),
+  const [channel, stats, videos, insights, jobs, settings, overview] = await Promise.all([
+    getChannel(slug), listStats(slug), listVideos(slug), getInsights(slug), pendingJobs(slug, ["insights"]), loadSettings(), getOverview(slug),
   ]);
   if (!channel) return null;
   const rows = stats
@@ -40,7 +42,13 @@ export default async function StatsPage(props: PageProps<"/channels/[slug]/stats
           <SubmitButton variant="secondary" disabled={!stats.length || jobs.length > 0}>Learn from these stats</SubmitButton>
         </form>
       </div>
-      {!settings.google.tokens && <p className="text-sm text-muted-foreground">Connect your YouTube channel in Settings to pull stats.</p>}
+      {!settings.google.tokens && (
+        <p className="text-sm text-muted-foreground">
+          <Link href="/settings" className="text-primary underline underline-offset-4">Connect your YouTube channel</Link> to pull subscribers, views and watch hours.
+        </p>
+      )}
+
+      {overview && <ChannelOverviewCards overview={overview} />}
 
       <Card>
         <CardHeader>
@@ -87,5 +95,72 @@ export default async function StatsPage(props: PageProps<"/channels/[slug]/stats
         </Card>
       )}
     </>
+  );
+}
+
+type Overview = NonNullable<Awaited<ReturnType<typeof getOverview>>>;
+
+function ChannelOverviewCards({ overview }: { overview: Overview }) {
+  const ypp = yppProgress(overview);
+  const compact = new Intl.NumberFormat("en", { notation: "compact", maximumFractionDigits: 1 });
+  const tiles = [
+    { label: "Subscribers", value: n.format(overview.subscribers) },
+    { label: "Total views", value: compact.format(overview.totalViews) },
+    { label: "Watch hours · 12 mo", value: n.format(overview.longFormHours12m) },
+    { label: "Shorts views · 90 days", value: compact.format(overview.shortsViews90d) },
+  ];
+  return (
+    <>
+      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+        {tiles.map((t) => (
+          <Card key={t.label} size="sm">
+            <CardContent className="space-y-1">
+              <p className="text-xs text-muted-foreground">{t.label}</p>
+              <p className="text-2xl font-semibold tabular-nums tracking-tight">{t.value}</p>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Road to monetization</CardTitle>
+          <CardDescription>
+            {ypp.eligible
+              ? "You meet the YouTube Partner Program thresholds. Apply in YouTube Studio → Earn."
+              : "YouTube Partner Program: 1,000 subscribers plus either 4,000 long-form watch hours (12 months) or 10M Shorts views (90 days)."}
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <Meter label="Subscribers" m={ypp.subscribers} />
+          <div className="grid gap-4 sm:grid-cols-2">
+            <Meter label="Watch hours (path A)" m={ypp.watchHours} />
+            <Meter label="Shorts views (path B)" m={ypp.shortsViews} />
+          </div>
+          <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
+            <span>Updated {new Date(overview.fetchedAt).toLocaleString("en")}. Estimates from YouTube Analytics; Studio&apos;s Earn tab has the official count.</span>
+            <a href="https://studio.youtube.com/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-primary hover:underline">
+              Open YouTube Studio <ExternalLink className="size-3" />
+            </a>
+          </p>
+        </CardContent>
+      </Card>
+    </>
+  );
+}
+
+function Meter({ label, m }: { label: string; m: { current: number; target: number; pct: number } }) {
+  return (
+    <div className="space-y-1.5">
+      <div className="flex items-baseline justify-between gap-2 text-sm">
+        <span>{label}</span>
+        <span className="tabular-nums text-muted-foreground">
+          {n.format(m.current)} / {n.format(m.target)}
+        </span>
+      </div>
+      <div className="h-2 overflow-hidden rounded-full bg-muted" role="progressbar" aria-label={label} aria-valuenow={m.pct} aria-valuemin={0} aria-valuemax={100}>
+        <div className={`h-full rounded-full ${m.pct === 100 ? "bg-emerald-400" : "bg-primary"}`} style={{ width: `${Math.max(m.pct, 1)}%` }} />
+      </div>
+    </div>
   );
 }

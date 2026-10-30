@@ -362,5 +362,15 @@
     "https://www.engadget.com/2011-02-08-nokia-ceo-stephen-elop-rallies-troops-in-brutally-honest-burnin.html",
     "https://en.wikipedia.org/wiki/Nokia"
   ],
-  "aiDisclosure": false
+  "aiDisclosure": false,
+  "approval": {
+    "hash": "f9abc6920656e811315a5a1c3f1a55b77f796564baf64fb367f80d2330f0e0bf",
+    "at": "2026-10-30T19:34:58.093Z",
+    "checklist": {
+      "original": true,
+      "visualsClean": true,
+      "disclosureSet": true,
+      "factsChecked": true
+    }
+  }
 }

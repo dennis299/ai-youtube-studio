@@ -305,5 +305,15 @@
     "https://www.bbc.com/news/business-29516468",
     "Robertson, D. (2013). Brick by Brick: How LEGO Rewrote the Rules of Innovation. Crown Business."
   ],
-  "aiDisclosure": false
+  "aiDisclosure": false,
+  "approval": {
+    "hash": "0d95555e227579333ef6e5ef34e037a01cd691f6551ca4e28204b6a283256f35",
+    "at": "2026-10-30T19:36:42.887Z",
+    "checklist": {
+      "original": true,
+      "visualsClean": true,
+      "disclosureSet": true,
+      "factsChecked": true
+    }
+  }
 }

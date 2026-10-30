@@ -3,9 +3,9 @@ import path from "node:path";
 import type { ZodType } from "zod";
 import { dataDir, readJson, writeJson } from "./fsjson";
 import {
-  ChannelKitSchema, ChannelSchema, InsightsSchema, ProductionSchema, PublishSchema,
+  ChannelKitSchema, ChannelOverviewSchema, ChannelSchema, InsightsSchema, ProductionSchema, PublishSchema,
   ResearchSchema, StatsSchema, StoryboardSchema, VideoPlanSchema,
-  type Channel, type ChannelKit, type Insights, type Production, type Publish,
+  type Channel, type ChannelKit, type ChannelOverview, type Insights, type Production, type Publish,
   type Research, type Stats, type Storyboard, type VideoPlan,
 } from "./schemas";
 
@@ -48,6 +48,8 @@ export const getKit = (slug: string) => read(path.join(channelDir(slug), "kit.js
 export const saveKit = (slug: string, k: ChannelKit) => write(path.join(channelDir(slug), "kit.json"), ChannelKitSchema, k);
 export const getInsights = (slug: string) => read(path.join(channelDir(slug), "insights.json"), InsightsSchema);
 export const saveInsights = (slug: string, i: Insights) => write(path.join(channelDir(slug), "insights.json"), InsightsSchema, i);
+export const getOverview = (slug: string) => read(path.join(channelDir(slug), "overview.json"), ChannelOverviewSchema);
+export const saveOverview = (slug: string, o: ChannelOverview) => write(path.join(channelDir(slug), "overview.json"), ChannelOverviewSchema, o);
 
 // Videos
 export const getVideo = (slug: string, id: string) => read(path.join(videoDir(slug, id), "video.json"), VideoPlanSchema);

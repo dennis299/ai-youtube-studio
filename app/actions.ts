@@ -11,6 +11,7 @@ import { outputDir } from "@/lib/fsjson";
 import { makeShort } from "@/lib/media/short";
 import { buildUploadKit, parseYouTubeId } from "@/lib/publish/kit";
 import { fetchStats } from "@/lib/youtube/stats";
+import { fetchChannelOverview } from "@/lib/youtube/overview";
 import { uploadVideo } from "@/lib/youtube/upload";
 import {
   getChannel, getInsights, getKit, getPublish, getResearch, getStoryboard, getVideo, listStats, listVideos,
@@ -387,8 +388,9 @@ export async function linkPublishedAction(fd: FormData) {
 export async function fetchStatsAction(fd: FormData) {
   const slug = str(fd, "slug");
   await attempt(`/channels/${slug}/stats`, async () => {
+    const overview = await fetchChannelOverview(slug);
     const stats = await fetchStats(slug);
-    return `Updated stats for ${stats.length} video(s).`;
+    return `Updated: ${overview.subscribers.toLocaleString("en")} subscribers, ${stats.length} video(s).`;
   });
 }
 

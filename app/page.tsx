@@ -28,7 +28,7 @@ export default async function Dashboard() {
   return (
     <div className="mx-auto max-w-5xl space-y-8">
       <header className="space-y-2">
-        <h1 className="text-3xl font-semibold tracking-tight">Your channels</h1>
+        <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">Your channels</h1>
         <p className="text-muted-foreground">
           Niche → research → channel kit → monthly plan → storyboards → weekly check-in → produce → publish → learn.
         </p>
@@ -38,7 +38,7 @@ export default async function Dashboard() {
 
       {pending > 0 && (
         <Card className="border-primary/40">
-          <CardContent className="flex items-center justify-between gap-4 py-4">
+          <CardContent className="flex flex-wrap items-center justify-between gap-3 py-4">
             <p className="text-sm">
               <Sparkles className="mr-2 inline size-4 text-primary" />
               {pending} job{pending === 1 ? "" : "s"} waiting for your AI agent.

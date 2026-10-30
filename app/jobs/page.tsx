@@ -17,7 +17,7 @@ export default async function JobsPage(props: PageProps<"/jobs">) {
   return (
     <div className="mx-auto max-w-5xl space-y-6">
       <header className="space-y-2">
-        <h1 className="text-3xl font-semibold tracking-tight">Agent jobs</h1>
+        <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">Agent jobs</h1>
         <p className="text-muted-foreground">
           In Agent mode the studio writes each AI task to <code>jobs/pending/</code>. Your coding agent (Claude Code, Codex,
           Cursor…) does the work and writes results to <code>jobs/done/</code>, and the studio validates and applies them.

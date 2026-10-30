@@ -12,15 +12,27 @@ export async function WaitingForAgent({ jobs, back }: { jobs: Job[]; back: strin
   return (
     <Card className="border-primary/40 bg-primary/5">
       <CardContent className="space-y-3 py-4 text-sm">
-        <p className="flex items-center gap-2 font-medium">
-          <Bot className="size-4 text-primary" />
-          Waiting for your AI agent: {jobs.map((j) => j.title).join(", ")}
-        </p>
+        <div className="flex items-start gap-3">
+          <span className="relative mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg bg-primary/15">
+            <Bot className="size-4 text-primary" />
+            <span className="absolute -top-0.5 -right-0.5 size-2 animate-pulse rounded-full bg-primary motion-reduce:animate-none" />
+          </span>
+          <div className="min-w-0 space-y-1.5">
+            <p className="font-medium">
+              Waiting for your AI agent · {jobs.length} job{jobs.length === 1 ? "" : "s"}
+            </p>
+            <ul className="space-y-0.5 text-muted-foreground">
+              {jobs.map((j) => (
+                <li key={j.id} className="truncate">{j.title}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
         <p className="text-muted-foreground">
           Run this in a terminal in the studio folder (or ask your coding agent to &quot;process pending jobs&quot;):
         </p>
+        <code className="block overflow-x-auto rounded-md bg-muted px-3 py-2 text-xs whitespace-pre">{agentCommand}</code>
         <div className="flex flex-wrap items-center gap-2">
-          <code className="rounded bg-muted px-2 py-1 text-xs">{agentCommand}</code>
           <CopyButton text={agentCommand} />
           <form action={syncJobsAction}>
             <input type="hidden" name="back" value={back} />

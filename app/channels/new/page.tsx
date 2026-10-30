@@ -11,7 +11,7 @@ export default async function NewChannel(props: PageProps<"/channels/new">) {
   return (
     <div className="mx-auto max-w-3xl space-y-6">
       <header className="space-y-2">
-        <h1 className="text-3xl font-semibold tracking-tight">Find your niche</h1>
+        <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">Find your niche</h1>
         <p className="text-muted-foreground">
           Pick a starting point or describe your own. The AI researches the top-performing videos in the niche,
           then builds your channel kit and a month of videos from what is already working.
