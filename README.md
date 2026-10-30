@@ -230,7 +230,7 @@ tests/               vitest
 ```
 
 ```bash
-npm test         # 42 tests: store, jobs, tasks, quota, schedule, check-in, Shorts, upload kit
+npm test         # 55 tests: store, jobs, tasks, quota, schedule, check-in, Shorts, upload kit, review fixes
 npm run build
 ```
 

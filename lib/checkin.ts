@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { getVideo, saveVideo, writeStoryboard } from "./store";
+import { getProduction, getStoryboard, getVideo, saveVideo, writeStoryboard } from "./store";
 import type { Checklist, Storyboard } from "./schemas";
 
 export const CHECKLIST: { key: keyof Checklist; label: string }[] = [
@@ -49,4 +49,16 @@ export async function saveStoryboard(slug: string, sb: Storyboard): Promise<Stor
     if (v.status !== status) await saveVideo(slug, { ...v, status });
   }
   return toSave;
+}
+
+/**
+ * Gate for everything after production (Short, upload kit, API upload): the storyboard
+ * must still be approved, and the render must come from that exact approved version.
+ */
+export async function assertRenderMatchesApproval(slug: string, id: string): Promise<void> {
+  const [sb, prod] = await Promise.all([getStoryboard(slug, id), getProduction(slug, id)]);
+  if (!isApproved(sb)) throw new Error("This storyboard is not approved. Approve it at the weekly check-in first.");
+  if (!prod?.storyboardHash || prod.storyboardHash !== storyboardHash(sb!)) {
+    throw new Error("This render was made from an older version of the storyboard. Produce the video again from the approved version.");
+  }
 }

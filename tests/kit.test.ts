@@ -4,6 +4,7 @@ import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { makeChannel, useTempDirs } from "./helpers";
 import { buildUploadKit, parseYouTubeId, renderDescription } from "@/lib/publish/kit";
 import { saveChannel, saveKit, saveProduction, saveVideo, writeStoryboard } from "@/lib/store";
+import { approve, storyboardHash } from "@/lib/checkin";
 import type { ChannelKit, Storyboard, VideoPlan } from "@/lib/schemas";
 
 let dirs: ReturnType<typeof useTempDirs>;
@@ -42,7 +43,8 @@ describe("upload kit", () => {
     await saveChannel(makeChannel());
     await saveKit("built-and-broken", kit);
     await saveVideo("built-and-broken", video);
-    await writeStoryboard("built-and-broken", sb);
+    const approved = approve(sb, { original: true, visualsClean: true, disclosureSet: true, factsChecked: true });
+    await writeStoryboard("built-and-broken", approved);
     const src = path.join(dirs.root, "render");
     await mkdir(src, { recursive: true });
     await writeFile(path.join(src, "final.mp4"), "video");
@@ -50,6 +52,7 @@ describe("upload kit", () => {
     await saveProduction("built-and-broken", {
       videoId: video.id, jobId: "j", status: "rendered",
       videoPath: path.join(src, "final.mp4"), thumbnailPath: path.join(src, "thumb.png"),
+      storyboardHash: storyboardHash(approved),
     });
 
     const dir = await buildUploadKit("built-and-broken", video.id);

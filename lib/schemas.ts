@@ -127,6 +127,7 @@ export const ProductionSchema = z.object({
   shortPath: z.string().optional(),
   thumbnailPath: z.string().optional(),
   captionsPath: z.string().optional(),
+  storyboardHash: z.string().optional(),
   costUsd: z.number().optional(),
   error: z.string().optional(),
 });

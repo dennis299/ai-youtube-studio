@@ -1,6 +1,7 @@
 import { spawn } from "node:child_process";
 import { mkdir } from "node:fs/promises";
 import path from "node:path";
+import { assertRenderMatchesApproval } from "../checkin";
 import { outputDir } from "../fsjson";
 import { loadSettings } from "../settings";
 import { getProduction, getStoryboard, saveProduction } from "../store";
@@ -62,6 +63,7 @@ export async function makeShort(slug: string, id: string): Promise<string> {
   const [prod, sb, settings] = await Promise.all([getProduction(slug, id), getStoryboard(slug, id), loadSettings()]);
   if (!prod?.videoPath) throw new Error("Render the video first.");
   if (!sb) throw new Error("No storyboard.");
+  await assertRenderMatchesApproval(slug, id);
   const { startSec, endSec } = segmentSeconds(sb.scenes, sb.shortSegment.startScene, sb.shortSegment.endScene);
   const dir = path.join(outputDir(), slug, id);
   await mkdir(dir, { recursive: true });

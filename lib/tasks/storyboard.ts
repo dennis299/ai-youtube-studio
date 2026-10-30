@@ -42,8 +42,12 @@ ${outputSection(Output)}
 `;
   },
   async apply(slug, { video }, out) {
-    await writeStoryboard(slug, { ...out, videoId: video.id });
     const v = await getVideo(slug, video.id);
-    if (v) await saveVideo(slug, { ...v, status: "storyboarded" });
+    if (!v) throw new Error(`Video ${video.id} no longer exists.`);
+    if (v.workingTitle !== video.workingTitle) {
+      throw new Error(`The topic changed since this storyboard was requested ("${video.workingTitle}" → "${v.workingTitle}"). Write the storyboard again.`);
+    }
+    await writeStoryboard(slug, { ...out, videoId: video.id });
+    if (["planned", "storyboarded", "approved"].includes(v.status)) await saveVideo(slug, { ...v, status: "storyboarded" });
   },
 };

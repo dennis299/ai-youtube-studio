@@ -1,6 +1,7 @@
 import { copyFile, mkdir, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
+import { assertRenderMatchesApproval } from "../checkin";
 import { outputDir } from "../fsjson";
 import { localOffset, publishAt } from "../schedule";
 import { getKit, getProduction, getStoryboard, getVideo, savePublish } from "../store";
@@ -36,6 +37,7 @@ export async function buildUploadKit(slug: string, id: string): Promise<string> 
   const [video, sb, prod, kit] = await Promise.all([getVideo(slug, id), getStoryboard(slug, id), getProduction(slug, id), getKit(slug)]);
   if (!video || !sb) throw new Error("Video or storyboard missing.");
   if (!prod?.videoPath || !existsSync(prod.videoPath)) throw new Error("The rendered video file is missing. Produce the video first.");
+  await assertRenderMatchesApproval(slug, id);
 
   const dir = path.join(outputDir(), slug, id, "kit");
   await mkdir(dir, { recursive: true });

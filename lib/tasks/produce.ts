@@ -70,6 +70,7 @@ ${outputSection(Output)}
       thumbnailPath: out.thumbnailPath,
       captionsPath: out.captionsPath,
       shortPath: prev?.shortPath,
+      storyboardHash: prev?.storyboardHash,
       costUsd: out.costUsd,
     });
     const v = await getVideo(slug, video.id);

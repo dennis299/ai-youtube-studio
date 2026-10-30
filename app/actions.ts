@@ -16,7 +16,7 @@ import {
   getChannel, getInsights, getKit, getPublish, getResearch, getStoryboard, getVideo, listStats, listVideos,
   saveChannel, saveKit, saveProduction, savePublish, saveVideo,
 } from "@/lib/store";
-import { approve, isApproved, saveStoryboard } from "@/lib/checkin";
+import { approve, isApproved, saveStoryboard, storyboardHash } from "@/lib/checkin";
 import { pendingJobs } from "@/lib/pending";
 import { disconnectGoogle } from "@/lib/youtube/client";
 import { researchNiche } from "@/lib/youtube/research";
@@ -327,7 +327,7 @@ export async function produceAction(fd: FormData) {
         outputDir: path.join(outputDir(), slug, id),
       });
       if (r.mode === "queued") {
-        await saveProduction(slug, { videoId: id, jobId: r.jobId, status: "queued" });
+        await saveProduction(slug, { videoId: id, jobId: r.jobId, status: "queued", storyboardHash: storyboardHash(sb) });
         await saveVideo(slug, { ...video, status: "producing" });
         queued++;
       }
@@ -361,8 +361,8 @@ export async function uploadApiAction(fd: FormData) {
   const slug = str(fd, "slug");
   const id = str(fd, "id");
   await attempt(`/channels/${slug}/videos/${id}`, async () => {
-    const { url } = await uploadVideo(slug, id);
-    return `Uploaded and scheduled: ${url}`;
+    const { url, warning } = await uploadVideo(slug, id);
+    return warning ? `Uploaded and scheduled: ${url}. ${warning}` : `Uploaded and scheduled: ${url}`;
   });
 }
 

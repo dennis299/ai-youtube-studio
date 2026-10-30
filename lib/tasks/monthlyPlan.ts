@@ -57,18 +57,26 @@ ${outputSection(Output)}
     if (videos.length < slots.length) {
       throw new Error(`Expected ${slots.length} videos, got ${videos.length}`);
     }
-    // Replace this month's untouched ideas; keep anything already storyboarded or further along.
+    // Replace this month's untouched ideas; keep anything storyboarded, further along,
+    // or with an agent job still in flight (its result would land on the wrong topic).
+    const { pendingJobs } = await import("../pending");
+    const busy = new Set((await pendingJobs(slug)).map((j) => (j.input as { video?: { id: string } }).video?.id).filter(Boolean));
     for (const v of await listVideos(slug)) {
-      if (v.month === month && v.status === "planned") await deleteVideo(slug, v.id);
+      if (v.month === month && v.status === "planned" && !busy.has(v.id)) await deleteVideo(slug, v.id);
     }
-    const kept = new Set((await listVideos(slug)).filter((v) => v.month === month).map((v) => v.publishDate));
+    const existing = await listVideos(slug);
+    const kept = new Set(existing.filter((v) => v.month === month).map((v) => v.publishDate));
+    const takenIds = new Set(existing.map((v) => v.id));
     let n = 0;
     for (const [i, slot] of slots.entries()) {
       if (kept.has(slot.date)) continue;
       const idea = videos[i];
       const idx = slots.slice(0, i + 1).filter((s) => s.week === slot.week).length;
+      let id = `${month}-w${slot.week}-${idx}`;
+      for (let k = 2; takenIds.has(id); k++) id = `${month}-w${slot.week}-${idx}-${k}`;
+      takenIds.add(id);
       await saveVideo(slug, {
-        id: `${month}-w${slot.week}-${idx}`,
+        id,
         month,
         week: slot.week,
         publishDate: slot.date,

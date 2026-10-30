@@ -3,6 +3,9 @@ import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { z } from "zod";
 import { jobsDir, readJson, writeJson } from "./fsjson";
+import { isApproved, storyboardHash } from "./checkin";
+import type { Storyboard } from "./schemas";
+import { getStoryboard } from "./store";
 import { getTask, type TaskType } from "./tasks";
 
 export const JobSchema = z.object({
@@ -92,8 +95,19 @@ export async function getJob(id: string): Promise<Job | null> {
   return (await listJobs()).find((j) => j.id === id) ?? null;
 }
 
+const SAFE_ID = /^[a-z0-9-]+$/;
+
+// One ingest at a time per server process, so two tabs can't apply the same result twice.
+let ingestLock: Promise<unknown> = Promise.resolve();
+
 /** Apply every finished job in jobs/done. Bad results are marked failed and left in place. */
-export async function ingestDoneJobs(): Promise<{ applied: string[]; failed: { id: string; error: string }[] }> {
+export function ingestDoneJobs(): Promise<{ applied: string[]; failed: { id: string; error: string }[] }> {
+  const run = ingestLock.then(ingestOnce, ingestOnce);
+  ingestLock = run.catch(() => undefined);
+  return run;
+}
+
+async function ingestOnce(): Promise<{ applied: string[]; failed: { id: string; error: string }[] }> {
   const applied: string[] = [];
   const failed: { id: string; error: string }[] = [];
 
@@ -113,11 +127,19 @@ export async function ingestDoneJobs(): Promise<{ applied: string[]; failed: { i
       continue;
     }
     const job = parsed.data;
+    if (job.id !== id || !SAFE_ID.test(job.id) || !SAFE_ID.test(job.slug)) {
+      failed.push({ id, error: `Job file ${f} has id "${job.id}" / slug "${job.slug}". The id must match the filename.` });
+      continue;
+    }
     if (job.status === "failed") {
       // Already reported; give the task a chance to record it once.
       if (!job.error?.startsWith("[recorded] ")) {
-        await getTask(job.type).onFail?.(job.slug, job.input, job.error ?? "Agent reported failure");
-        await writeJson(file, { ...job, error: `[recorded] ${job.error ?? "Agent reported failure"}` });
+        try {
+          await getTask(job.type).onFail?.(job.slug, job.input, job.error ?? "Agent reported failure");
+        } catch {
+          // A malformed failed job must never take down the pages that ingest it.
+        }
+        await writeJson(file, { ...job, error: `[recorded] ${job.error ?? "Agent reported failure"}` }).catch(() => undefined);
       }
       failed.push({ id: job.id, error: job.error ?? "failed" });
       continue;
@@ -147,6 +169,13 @@ export async function ingestDoneJobs(): Promise<{ applied: string[]; failed: { i
 export async function retryJob(id: string): Promise<void> {
   const file = path.join(dir("done"), `${id}.json`);
   const job = JobSchema.parse(await readJson(file));
+  if (job.type === "produce") {
+    const queued = (job.input as { storyboard: Storyboard }).storyboard;
+    const current = await getStoryboard(job.slug, queued.videoId);
+    if (!isApproved(current) || storyboardHash(current!) !== storyboardHash(queued)) {
+      throw new Error("The storyboard changed or is no longer approved since this job was queued. Approve it again and press Produce instead of retrying.");
+    }
+  }
   const task = getTask(job.type);
   await mkdir(dir("pending"), { recursive: true });
   await writeFile(path.join(dir("pending"), `${id}.md`), agentHeader(job) + task.buildPrompt(job.input), "utf8");

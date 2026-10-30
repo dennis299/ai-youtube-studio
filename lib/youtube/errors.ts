@@ -18,9 +18,14 @@ type GoogleLike = { code?: number; status?: number; message?: string; errors?: {
 /** Normalise a googleapis error into a YouTubeError with a readable message. */
 export function toYouTubeError(err: unknown): YouTubeError {
   if (err instanceof YouTubeError) return err;
-  const e = (err ?? {}) as GoogleLike & { response?: { data?: { error?: GoogleLike } } };
-  const inner = e.response?.data?.error ?? e;
-  const reason = inner.errors?.[0]?.reason ?? (inner.code === 401 || e.status === 401 ? "authError" : "unknown");
+  const e = (err ?? {}) as GoogleLike & { response?: { data?: { error?: GoogleLike | string } } };
+  const dataError = e.response?.data?.error;
+  const inner: GoogleLike = typeof dataError === "object" && dataError ? dataError : e;
+  const tokenProblem =
+    dataError === "invalid_grant" || /invalid_grant|No refresh token/i.test(String(e.message ?? ""));
+  const reason =
+    inner.errors?.[0]?.reason ??
+    (tokenProblem || inner.code === 401 || e.status === 401 ? "authError" : "unknown");
   const message = MESSAGES[reason] ?? `YouTube API error: ${inner.message ?? (err as Error)?.message ?? String(err)}`;
   return new YouTubeError(message, reason);
 }
