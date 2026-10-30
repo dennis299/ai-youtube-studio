@@ -126,6 +126,7 @@ export const ProductionSchema = z.object({
   videoPath: z.string().optional(),
   shortPath: z.string().optional(),
   thumbnailPath: z.string().optional(),
+  captionsPath: z.string().optional(),
   costUsd: z.number().optional(),
   error: z.string().optional(),
 });

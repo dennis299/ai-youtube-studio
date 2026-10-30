@@ -68,6 +68,7 @@ ${outputSection(Output)}
       status: "rendered",
       videoPath: out.videoPath,
       thumbnailPath: out.thumbnailPath,
+      captionsPath: out.captionsPath,
       shortPath: prev?.shortPath,
       costUsd: out.costUsd,
     });

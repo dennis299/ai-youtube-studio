@@ -6,7 +6,18 @@ import { runTask, type RunResult } from "@/lib/ai";
 import { ingestDoneJobs, retryJob } from "@/lib/jobs";
 import { getPreset } from "@/lib/presets";
 import { loadSettings, saveSettings } from "@/lib/settings";
-import { getChannel, getKit, getResearch, saveChannel, saveKit } from "@/lib/store";
+import path from "node:path";
+import { outputDir } from "@/lib/fsjson";
+import { makeShort } from "@/lib/media/short";
+import { buildUploadKit, parseYouTubeId } from "@/lib/publish/kit";
+import { fetchStats } from "@/lib/youtube/stats";
+import { uploadVideo } from "@/lib/youtube/upload";
+import {
+  getChannel, getInsights, getKit, getPublish, getResearch, getStoryboard, getVideo, listStats, listVideos,
+  saveChannel, saveKit, saveProduction, savePublish, saveVideo,
+} from "@/lib/store";
+import { approve, isApproved, saveStoryboard } from "@/lib/checkin";
+import { pendingJobs } from "@/lib/pending";
 import { disconnectGoogle } from "@/lib/youtube/client";
 import { researchNiche } from "@/lib/youtube/research";
 import type { Channel } from "@/lib/schemas";
@@ -189,5 +200,205 @@ export async function disconnectGoogleAction() {
   await attempt("/settings", async () => {
     await disconnectGoogle();
     return "YouTube channel disconnected.";
+  });
+}
+
+// ---------- plan, storyboards, check-in ----------
+
+export async function planMonthAction(fd: FormData) {
+  const slug = str(fd, "slug");
+  const month = str(fd, "month");
+  await attempt(`/channels/${slug}/plan?month=${month}`, async () => {
+    if (!/^\d{4}-\d{2}$/.test(month)) throw new Error("Pick a month first.");
+    const channel = await requireChannel(slug);
+    const [research, kit, insights] = await Promise.all([getResearch(slug), getKit(slug), getInsights(slug)]);
+    return ranMsg(await runTask(slug, "monthly_plan", { channel, research, kit, month, insights }), `The ${month} plan`);
+  });
+}
+
+export async function storyboardAction(fd: FormData) {
+  const slug = str(fd, "slug");
+  const ids = fd.getAll("id").map(String);
+  await attempt(str(fd, "back") || `/channels/${slug}/checkin`, async () => {
+    const channel = await requireChannel(slug);
+    const kit = await getKit(slug);
+    const open = await pendingJobs(slug, ["storyboard"]);
+    let queued = 0;
+    let done = 0;
+    for (const id of ids) {
+      const video = await getVideo(slug, id);
+      if (!video) continue;
+      if (open.some((j) => (j.input as { video?: { id: string } }).video?.id === id)) continue;
+      const r = await runTask(slug, "storyboard", { channel, kit, video });
+      if (r.mode === "queued") queued++; else done++;
+    }
+    if (queued) return `${queued} storyboard(s) queued for your AI agent. Run the agent, then click "Check for results".`;
+    return `${done} storyboard(s) written.`;
+  });
+}
+
+export async function updateVideoAction(fd: FormData) {
+  const slug = str(fd, "slug");
+  const id = str(fd, "id");
+  await attempt(`/channels/${slug}/videos/${id}`, async () => {
+    const v = await getVideo(slug, id);
+    if (!v) throw new Error("Video not found.");
+    await saveVideo(slug, { ...v, workingTitle: str(fd, "workingTitle") || v.workingTitle, angle: str(fd, "angle") || v.angle });
+    return "Topic updated. Regenerate the storyboard to use it.";
+  });
+}
+
+export async function saveStoryboardAction(fd: FormData) {
+  const slug = str(fd, "slug");
+  const id = str(fd, "id");
+  await attempt(`/channels/${slug}/videos/${id}`, async () => {
+    const sb = await getStoryboard(slug, id);
+    if (!sb) throw new Error("No storyboard to save.");
+    const scenes = sb.scenes.map((s) => ({
+      ...s,
+      narration: str(fd, `scene_${s.n}_narration`) || s.narration,
+      visual: str(fd, `scene_${s.n}_visual`) || s.visual,
+      seconds: num(fd, `scene_${s.n}_seconds`, s.seconds),
+    }));
+    const saved = await saveStoryboard(slug, {
+      ...sb,
+      chosenTitle: str(fd, "chosenTitle") || sb.chosenTitle,
+      hook: str(fd, "hook") || sb.hook,
+      outro: str(fd, "outro") || sb.outro,
+      aiDisclosure: fd.get("aiDisclosure") === "on",
+      shortSegment: {
+        ...sb.shortSegment,
+        startScene: num(fd, "shortStart", sb.shortSegment.startScene),
+        endScene: num(fd, "shortEnd", sb.shortSegment.endScene),
+      },
+      scenes,
+    });
+    return sb.approval && !saved.approval
+      ? "Saved. Your edits changed an approved storyboard, so it needs check-in approval again."
+      : "Storyboard saved.";
+  });
+}
+
+export async function approveAction(fd: FormData) {
+  const slug = str(fd, "slug");
+  const id = str(fd, "id");
+  await attempt(str(fd, "back") || `/channels/${slug}/checkin`, async () => {
+    const sb = await getStoryboard(slug, id);
+    if (!sb) throw new Error("Generate the storyboard before approving.");
+    const checklist = {
+      original: fd.get("original") === "on",
+      visualsClean: fd.get("visualsClean") === "on",
+      disclosureSet: fd.get("disclosureSet") === "on",
+      factsChecked: fd.get("factsChecked") === "on",
+    };
+    await saveStoryboard(slug, approve(sb, checklist));
+    return `Approved "${sb.chosenTitle}".`;
+  });
+}
+
+export async function unapproveAction(fd: FormData) {
+  const slug = str(fd, "slug");
+  const id = str(fd, "id");
+  await attempt(str(fd, "back") || `/channels/${slug}/checkin`, async () => {
+    const sb = await getStoryboard(slug, id);
+    if (!sb) throw new Error("No storyboard.");
+    await saveStoryboard(slug, { ...sb, approval: undefined });
+    return "Approval removed.";
+  });
+}
+
+// ---------- produce, publish, stats ----------
+
+export async function produceAction(fd: FormData) {
+  const slug = str(fd, "slug");
+  const ids = fd.getAll("id").map(String);
+  await attempt(str(fd, "back") || `/channels/${slug}/checkin`, async () => {
+    const channel = await requireChannel(slug);
+    const settings = await loadSettings();
+    if (!settings.openMontagePath) throw new Error("Set your OpenMontage folder in Settings first.");
+    let queued = 0;
+    for (const id of ids) {
+      const [video, sb] = await Promise.all([getVideo(slug, id), getStoryboard(slug, id)]);
+      if (!video || !sb) continue;
+      if (!isApproved(sb)) throw new Error(`"${sb.chosenTitle}" is not approved. Approve it at the weekly check-in first.`);
+      const r = await runTask(slug, "produce", {
+        channel, video, storyboard: sb,
+        openMontagePath: settings.openMontagePath,
+        outputDir: path.join(outputDir(), slug, id),
+      });
+      if (r.mode === "queued") {
+        await saveProduction(slug, { videoId: id, jobId: r.jobId, status: "queued" });
+        await saveVideo(slug, { ...video, status: "producing" });
+        queued++;
+      }
+    }
+    if (!queued) throw new Error("Nothing to produce.");
+    const c = await getChannel(slug);
+    if (c && c.stage !== "producing") await saveChannel({ ...c, stage: "producing" });
+    return `${queued} video(s) sent to production. Run your agent so it can drive OpenMontage, then click "Check for results".`;
+  });
+}
+
+export async function makeShortAction(fd: FormData) {
+  const slug = str(fd, "slug");
+  const id = str(fd, "id");
+  await attempt(`/channels/${slug}/videos/${id}`, async () => {
+    await makeShort(slug, id);
+    return "Short created (1080×1920).";
+  });
+}
+
+export async function buildKitAction(fd: FormData) {
+  const slug = str(fd, "slug");
+  const id = str(fd, "id");
+  await attempt(`/channels/${slug}/videos/${id}`, async () => {
+    const dir = await buildUploadKit(slug, id);
+    return `Upload kit ready in ${dir}. Open upload.txt and follow the steps in YouTube Studio.`;
+  });
+}
+
+export async function uploadApiAction(fd: FormData) {
+  const slug = str(fd, "slug");
+  const id = str(fd, "id");
+  await attempt(`/channels/${slug}/videos/${id}`, async () => {
+    const { url } = await uploadVideo(slug, id);
+    return `Uploaded and scheduled: ${url}`;
+  });
+}
+
+export async function linkPublishedAction(fd: FormData) {
+  const slug = str(fd, "slug");
+  const id = str(fd, "id");
+  await attempt(`/channels/${slug}/videos/${id}`, async () => {
+    const youtubeId = parseYouTubeId(str(fd, "url"));
+    if (!youtubeId) throw new Error("That doesn't look like a YouTube video link.");
+    const [video, prev] = await Promise.all([getVideo(slug, id), getPublish(slug, id)]);
+    if (!video) throw new Error("Video not found.");
+    await savePublish(slug, {
+      videoId: id, mode: prev?.mode ?? "studio-kit", kitPath: prev?.kitPath,
+      publishAt: prev?.publishAt ?? new Date().toISOString(),
+      youtubeId, url: `https://youtu.be/${youtubeId}`,
+    });
+    await saveVideo(slug, { ...video, status: "published" });
+    return "Linked. Stats for this video will show on the Stats page.";
+  });
+}
+
+export async function fetchStatsAction(fd: FormData) {
+  const slug = str(fd, "slug");
+  await attempt(`/channels/${slug}/stats`, async () => {
+    const stats = await fetchStats(slug);
+    return `Updated stats for ${stats.length} video(s).`;
+  });
+}
+
+export async function insightsAction(fd: FormData) {
+  const slug = str(fd, "slug");
+  await attempt(`/channels/${slug}/stats`, async () => {
+    const channel = await requireChannel(slug);
+    const [stats, videos] = await Promise.all([listStats(slug), listVideos(slug)]);
+    if (!stats.length) throw new Error("No stats yet. Link or upload a video, then refresh stats.");
+    const published = videos.filter((v) => stats.some((s) => s.videoId === v.id));
+    return ranMsg(await runTask(slug, "insights", { channel, stats, videos: published }), "Stats analysis");
   });
 }
