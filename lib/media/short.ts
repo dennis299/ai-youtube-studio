@@ -1,4 +1,5 @@
 import { spawn } from "node:child_process";
+import { existsSync } from "node:fs";
 import { mkdir } from "node:fs/promises";
 import path from "node:path";
 import { assertRenderMatchesApproval } from "../checkin";
@@ -58,12 +59,20 @@ export function runFfmpeg(bin: string, args: string[]): Promise<void> {
   });
 }
 
-/** Cut the storyboard's Short segment out of the rendered video. */
+/**
+ * Cut the storyboard's Short segment out of the rendered video. If the render job already
+ * delivered a vertical short.mp4 next to the video (with real timings and a hook), use that.
+ */
 export async function makeShort(slug: string, id: string): Promise<string> {
   const [prod, sb, settings] = await Promise.all([getProduction(slug, id), getStoryboard(slug, id), loadSettings()]);
   if (!prod?.videoPath) throw new Error("Render the video first.");
   if (!sb) throw new Error("No storyboard.");
   await assertRenderMatchesApproval(slug, id);
+  const delivered = path.join(path.dirname(prod.videoPath), "short.mp4");
+  if (!prod.shortPath && existsSync(delivered)) {
+    await saveProduction(slug, { ...prod, shortPath: delivered });
+    return delivered;
+  }
   const { startSec, endSec } = segmentSeconds(sb.scenes, sb.shortSegment.startScene, sb.shortSegment.endScene);
   const dir = path.join(outputDir(), slug, id);
   await mkdir(dir, { recursive: true });

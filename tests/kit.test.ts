@@ -62,6 +62,57 @@ describe("upload kit", () => {
     expect(txt).toContain("Category: 27");
     expect(await readFile(path.join(dir, "video.mp4"), "utf8")).toBe("video");
   });
+
+  it("puts the render's image credits in the description and copies the captions", async () => {
+    await saveChannel(makeChannel());
+    await saveKit("built-and-broken", kit);
+    await saveVideo("built-and-broken", video);
+    const approved = approve(sb, { original: true, visualsClean: true, disclosureSet: true, factsChecked: true });
+    await writeStoryboard("built-and-broken", approved);
+    const src = path.join(dirs.root, "render");
+    await mkdir(src, { recursive: true });
+    await writeFile(path.join(src, "video.mp4"), "video");
+    await writeFile(path.join(src, "captions.srt"), "1\n00:00:00,000 --> 00:00:01,000\nHi\n");
+    await writeFile(path.join(src, "credits.txt"), "Image credits:\n- Jane Doe, CC BY-SA 4.0, via wikimedia\n");
+    await saveProduction("built-and-broken", {
+      videoId: video.id, jobId: "j", status: "rendered", videoPath: path.join(src, "video.mp4"),
+      captionsPath: path.join(src, "captions.srt"), storyboardHash: storyboardHash(approved),
+    });
+
+    const dir = await buildUploadKit("built-and-broken", video.id);
+    const txt = await readFile(path.join(dir, "upload.txt"), "utf8");
+    const description = txt.split("=== DESCRIPTION ===")[1].split("=== TAGS ===")[0];
+    expect(description).toContain("- Jane Doe, CC BY-SA 4.0, via wikimedia");
+    expect(await readFile(path.join(dir, "captions.srt"), "utf8")).toContain("Hi");
+  });
+
+  it("copies every delivered Short and lists each one's title and posting day", async () => {
+    await saveChannel(makeChannel());
+    await saveKit("built-and-broken", kit);
+    await saveVideo("built-and-broken", video);
+    const approved = approve(sb, { original: true, visualsClean: true, disclosureSet: true, factsChecked: true });
+    await writeStoryboard("built-and-broken", approved);
+    const src = path.join(dirs.root, "render");
+    await mkdir(src, { recursive: true });
+    await writeFile(path.join(src, "video.mp4"), "video");
+    await writeFile(path.join(src, "short.mp4"), "s1");
+    await writeFile(path.join(src, "short-2.mp4"), "s2");
+    await writeFile(path.join(src, "shorts.json"), JSON.stringify([
+      { file: "short.mp4", title: "Nokia had a touchscreen phone in 2004 #shorts", description: "Full story on the channel", postDate: "2026-11-02" },
+      { file: "short-2.mp4", title: "Why Nokia couldn't answer the iPhone #shorts", description: "Full story on the channel", postDate: "2026-11-04" },
+    ]));
+    await saveProduction("built-and-broken", {
+      videoId: video.id, jobId: "j", status: "rendered", videoPath: path.join(src, "video.mp4"),
+      shortPath: path.join(src, "short.mp4"), storyboardHash: storyboardHash(approved),
+    });
+
+    const dir = await buildUploadKit("built-and-broken", video.id);
+    const txt = await readFile(path.join(dir, "upload.txt"), "utf8");
+    expect(await readFile(path.join(dir, "short-2.mp4"), "utf8")).toBe("s2");
+    expect(txt).toContain("=== SHORTS (2) ===");
+    expect(txt).toContain("short-2.mp4 · post 2026-11-04");
+    expect(txt).toContain("Title: Why Nokia couldn't answer the iPhone #shorts");
+  });
 });
 
 describe("parseYouTubeId", () => {

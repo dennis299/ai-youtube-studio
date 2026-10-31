@@ -51,6 +51,7 @@ ${json(PRODUCTION_FIELDS(channel))}
 2. Narrate the script, build the scenes, add captions and music (royalty-free only), and render the 1920×1080 MP4.
 3. Make a 1280×720 thumbnail from the first thumbnail concept: bold, at most 3 words, high contrast.
 4. Copy the final MP4, the thumbnail, and an SRT of the narration into \`${outputDir}\`.
+   Optional, in the same folder: \`short.mp4\`, a 1080×1920 Short of scenes ${sb.shortSegment.startScene}–${sb.shortSegment.endScene} (about 60 s, opening with a spoken hook: "${sb.shortSegment.hookLine}"), which the app uses instead of cutting its own; and \`credits.txt\`, attribution for any CC-licensed images, which the upload kit adds to the description.
 5. Report the absolute paths and the total cost.
 
 ## Storyboard

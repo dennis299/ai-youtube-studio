@@ -3,7 +3,7 @@ import { loadSettings } from "../settings";
 import { localOffset, publishAt } from "../schedule";
 import { assertRenderMatchesApproval } from "../checkin";
 import { getKit, getProduction, getPublish, getStoryboard, getVideo, savePublish, saveVideo } from "../store";
-import { renderDescription, uploadTags } from "../publish/kit";
+import { readCredits, renderDescription, uploadTags } from "../publish/kit";
 import { withYouTube } from "./client";
 import { YouTubeError } from "./errors";
 import { callCharged } from "./quota";
@@ -36,6 +36,7 @@ export async function uploadVideo(
 
   const when = publishAt(video.publishDate, 15, localOffset());
   const scheduled = Date.parse(when) > Date.now() + 15 * 60_000;
+  const credits = await readCredits(prod.videoPath);
 
   // The insert runs alone so a later failure (e.g. thumbnail) can never trigger a second upload.
   const youtubeId = await run(async ({ yt }) => {
@@ -46,7 +47,7 @@ export async function uploadVideo(
         requestBody: {
           snippet: {
             title: sb.chosenTitle.slice(0, 100),
-            description: renderDescription(kit, sb, video).slice(0, 5000),
+            description: renderDescription(kit, sb, video, credits).slice(0, 5000),
             tags: uploadTags(kit, video),
             categoryId: kit?.uploadDefaults.categoryId ?? "27",
             defaultLanguage: "en",
